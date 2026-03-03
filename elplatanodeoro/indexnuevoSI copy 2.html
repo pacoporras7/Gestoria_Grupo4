@@ -7,19 +7,18 @@
   <title>NOMBRE</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
-  <style>
-    html {
-      scroll-behavior: smooth;
-    }
-  </style>
+  <!-- ✅ AÑADIDO: Google Fonts - Tipografía Syne + Inter -->
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 
-<body class="bg-white text-gray-900 font-sans scroll-smooth">
+<body class="bg-white text-gray-900 font-sans scroll-smooth relative" style="font-family: 'Inter', sans-serif;">
 
   <!-- HEADER -->
   <header class="border-b bg-white/80 backdrop-blur-md sticky top-0 z-50 shadow-sm">
     <nav class="max-w-7xl mx-auto flex justify-between items-center px-8 py-5">
-      <h1 class="text-2xl font-extrabold tracking-wide text-blue-900">NOMBRE</h1>
+      <!-- ✅ AÑADIDO: fuente Syne al logo -->
+      <h1 class="text-2xl font-extrabold tracking-wide text-blue-900" style="font-family: 'Syne', sans-serif;">NOMBRE</h1>
       <ul class="hidden md:flex space-x-10 text-sm font-semibold uppercase tracking-wider">
         <li><a href="#inicio" class="hover:text-blue-700 transition">Inicio</a></li>
         <li><a href="#servicios" class="hover:text-blue-700 transition">Servicios</a></li>
@@ -34,11 +33,22 @@
     <video autoplay muted loop playsinline class="absolute w-full h-full object-cover">
       <source src="video-corporativo.mp4" type="video/mp4">
     </video>
-
     <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-black/70"></div>
+
+    <!-- Overlay partículas -->
+    <div class="absolute inset-0 pointer-events-none">
+      <div class="w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.03),transparent_70%)] animate-pulse-slow"></div>
+    </div>
 
     <div class="relative z-10 flex items-center h-full">
       <div class="max-w-5xl mx-auto px-8 text-white">
+
+        <!-- ✅ AÑADIDO: Badge animado con ping -->
+        <div class="inline-flex items-center gap-2 bg-blue-600/30 border border-blue-400/40 backdrop-blur-sm text-blue-200 text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full mb-6 animate-fadeIn">
+          <span class="w-2 h-2 bg-blue-400 rounded-full animate-ping inline-block"></span>
+          Consultoría Tecnológica
+        </div>
+
         <h2 class="text-5xl md:text-6xl font-bold leading-tight mb-8 animate-fadeIn">
           Transformamos el futuro digital
         </h2>
@@ -46,9 +56,49 @@
           Estrategia, tecnología e innovación para impulsar organizaciones hacia el siguiente nivel.
         </p>
         <a href="#contacto"
-          class="bg-white text-blue-900 px-8 py-4 font-semibold uppercase tracking-wider hover:bg-blue-900 hover:text-white transition duration-300 rounded-lg shadow-lg animate-fadeIn delay-400">
+          class="bg-gradient-to-r from-blue-500 to-blue-700 text-white px-8 py-4 font-semibold uppercase tracking-wider rounded-lg shadow-lg hover:shadow-2xl hover:brightness-110 transition duration-300 animate-fadeIn delay-400 hover:scale-105 hover:animate-pulse">
           Descubrir más
         </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ✅ AÑADIDO: Sección estadísticas DaisyUI stats -->
+  <section class="py-16 bg-blue-900">
+    <div class="max-w-5xl mx-auto px-8">
+      <div class="stats stats-vertical lg:stats-horizontal shadow w-full bg-blue-800 text-white rounded-2xl">
+        <div class="stat text-center">
+          <div class="stat-figure text-blue-300">
+            <i class="fas fa-briefcase text-3xl"></i>
+          </div>
+          <div class="stat-title text-blue-200">Proyectos completados</div>
+          <div class="stat-value text-white">+120</div>
+          <div class="stat-desc text-blue-300">Desde 2018</div>
+        </div>
+        <div class="stat text-center">
+          <div class="stat-figure text-blue-300">
+            <i class="fas fa-users text-3xl"></i>
+          </div>
+          <div class="stat-title text-blue-200">Clientes satisfechos</div>
+          <div class="stat-value text-white">98%</div>
+          <div class="stat-desc text-blue-300">Tasa de satisfacción</div>
+        </div>
+        <div class="stat text-center">
+          <div class="stat-figure text-blue-300">
+            <i class="fas fa-globe text-3xl"></i>
+          </div>
+          <div class="stat-title text-blue-200">Países</div>
+          <div class="stat-value text-white">12</div>
+          <div class="stat-desc text-blue-300">Presencia internacional</div>
+        </div>
+        <div class="stat text-center">
+          <div class="stat-figure text-blue-300">
+            <i class="fas fa-code text-3xl"></i>
+          </div>
+          <div class="stat-title text-blue-200">Líneas de código</div>
+          <div class="stat-value text-white">2M+</div>
+          <div class="stat-desc text-blue-300">En producción</div>
+        </div>
       </div>
     </div>
   </section>
@@ -58,91 +108,79 @@
     <div class="max-w-7xl mx-auto px-8">
       <h2 class="text-4xl font-extrabold mb-16 text-center text-blue-900">Nuestros Servicios</h2>
       <div class="grid md:grid-cols-3 gap-10">
-        <!-- Card 1 -->
-        <div class="card fade-in bg-white shadow-xl rounded-2xl transition-transform duration-300 hover:shadow-2xl hover:-translate-y-1 group relative overflow-hidden">
+        <div
+          class="card fade-in bg-white shadow-xl rounded-2xl transition-transform duration-500 hover:shadow-2xl hover:-translate-y-2 hover:scale-105 group relative overflow-hidden hover:bg-gradient-to-r hover:from-blue-50 hover:to-blue-100">
           <figure class="aspect-video overflow-hidden">
-            <img src="https://mujeresxmas.com/wp-content/uploads/2022/01/Innovacion-digital-en-que-consiste-y-como-aplica-2.jpg"
-              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+            <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&q=80"
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
           </figure>
           <div class="card-body">
             <h3 class="card-title">Transformación Digital</h3>
             <p>Modernización de procesos y estrategia tecnológica.</p>
-            <a href="#contacto"
-               class="btn btn-sm mt-2 bg-blue-700 text-white hover:bg-blue-900 transition duration-300 shadow-lg hover:shadow-2xl">
-              Contactar
-            </a>
           </div>
         </div>
 
-        <!-- Card 2 -->
-        <div class="card fade-in bg-white shadow-xl rounded-2xl transition-transform duration-300 hover:shadow-2xl hover:-translate-y-1 group relative overflow-hidden">
+        <div
+          class="card fade-in bg-white shadow-xl rounded-2xl transition-transform duration-500 hover:shadow-2xl hover:-translate-y-2 hover:scale-105 group relative overflow-hidden hover:bg-gradient-to-r hover:from-blue-50 hover:to-blue-100">
           <figure class="aspect-video overflow-hidden">
-            <img src="https://ccbosco.es/wp-content/uploads/2021/05/soluciones-cloud-zaragoza.jpg"
-              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=80"
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
           </figure>
           <div class="card-body">
             <h3 class="card-title">Soluciones Cloud</h3>
             <p>Infraestructura escalable, segura y eficiente.</p>
-            <a href="#contacto"
-               class="btn btn-sm mt-2 bg-blue-700 text-white hover:bg-blue-900 transition duration-300 shadow-lg hover:shadow-2xl">
-              Contactar
-            </a>
           </div>
         </div>
 
-        <!-- Card 3 -->
-        <div class="card fade-in bg-white shadow-xl rounded-2xl transition-transform duration-300 hover:shadow-2xl hover:-translate-y-1 group relative overflow-hidden">
+        <div
+          class="card fade-in bg-white shadow-xl rounded-2xl transition-transform duration-500 hover:shadow-2xl hover:-translate-y-2 hover:scale-105 group relative overflow-hidden hover:bg-gradient-to-r hover:from-blue-50 hover:to-blue-100">
           <figure class="aspect-video overflow-hidden">
-            <img src="https://pasiona.com/wp-content/uploads/2022/06/Ventajas-y-beneficios-del-desarrollo-de-software.jpg"
-              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+            <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&q=80"
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
           </figure>
           <div class="card-body">
             <h3 class="card-title">Desarrollo de Software</h3>
             <p>Aplicaciones web y sistemas empresariales a medida.</p>
-            <a href="#contacto"
-               class="btn btn-sm mt-2 bg-blue-700 text-white hover:bg-blue-900 transition duration-300 shadow-lg hover:shadow-2xl">
-              Contactar
-            </a>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- EQUIPO -->
+  <!-- EQUIPO (restaurado y con hover zoom brillante) -->
   <section id="equipo" class="py-24 bg-gray-100">
     <div class="max-w-7xl mx-auto px-8">
       <h2 class="text-4xl font-extrabold mb-16 text-center text-blue-900">Nuestro Equipo</h2>
       <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-10">
-        <!-- Miembro 1 -->
-        <div class="fade-in bg-white rounded-2xl shadow-xl p-6 text-center transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
-          <img src="https://via.placeholder.com/150" alt="Simona Georgiana" class="w-32 h-32 mx-auto rounded-full object-cover mb-4">
-          <h3 class="text-xl font-bold text-blue-900">Simona Georgiana</h3>
-          <p class="text-gray-500">Directora de Estrategia Tecnológica</p>
+        <div class="fade-in relative group bg-white rounded-2xl shadow-xl p-6 text-center transition-transform duration-500 hover:scale-105 hover:shadow-2xl overflow-hidden">
+          <img src="https://via.placeholder.com/150" alt="Simona Georgiana"
+            class="w-32 h-32 mx-auto rounded-full object-cover mb-4 hover:scale-110 hover:brightness-110 transition duration-500">
+          <h3 class="text-xl font-bold">Simona Georgiana</h3>
+          <p class="text-gray-500">Estudiante De DAM</p>
         </div>
-        <!-- Miembro 2 -->
-        <div class="fade-in bg-white rounded-2xl shadow-xl p-6 text-center transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
-          <img src="https://via.placeholder.com/150" alt="Rodrigo Sánchez" class="w-32 h-32 mx-auto rounded-full object-cover mb-4">
-          <h3 class="text-xl font-bold text-blue-900">Rodrigo Sánchez</h3>
-          <p class="text-gray-500">Ingeniero de Arquitecturas Cloud</p>
+        <div class="fade-in relative group bg-white rounded-2xl shadow-xl p-6 text-center transition-transform duration-500 hover:scale-105 hover:shadow-2xl overflow-hidden">
+          <img src="https://via.placeholder.com/150" alt="Rodrigo Sánchez"
+            class="w-32 h-32 mx-auto rounded-full object-cover mb-4 hover:scale-110 hover:brightness-110 transition duration-500">
+          <h3 class="text-xl font-bold">Rodrigo Sánchez</h3>
+          <p class="text-gray-500">Estudiante De DAM</p>
         </div>
-        <!-- Miembro 3 -->
-        <div class="fade-in bg-white rounded-2xl shadow-xl p-6 text-center transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
-          <img src="https://via.placeholder.com/150" alt="Sergio Vega" class="w-32 h-32 mx-auto rounded-full object-cover mb-4">
-          <h3 class="text-xl font-bold text-blue-900">Sergio Vega</h3>
-          <p class="text-gray-500">Arquitecto de Aplicaciones</p>
+        <div class="fade-in relative group bg-white rounded-2xl shadow-xl p-6 text-center transition-transform duration-500 hover:scale-105 hover:shadow-2xl overflow-hidden">
+          <img src="https://via.placeholder.com/150" alt="Sergio Vega"
+            class="w-32 h-32 mx-auto rounded-full object-cover mb-4 hover:scale-110 hover:brightness-110 transition duration-500">
+          <h3 class="text-xl font-bold">Sergio Vega</h3>
+          <p class="text-gray-500">Estudiante De DAM</p>
         </div>
-        <!-- Miembro 4 -->
-        <div class="fade-in bg-white rounded-2xl shadow-xl p-6 text-center transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
-          <img src="https://via.placeholder.com/150" alt="Samuel Martínez" class="w-32 h-32 mx-auto rounded-full object-cover mb-4">
-          <h3 class="text-xl font-bold text-blue-900">Samuel Martínez</h3>
-          <p class="text-gray-500">Consultor en Optimización de Procesos</p>
+        <div class="fade-in relative group bg-white rounded-2xl shadow-xl p-6 text-center transition-transform duration-500 hover:scale-105 hover:shadow-2xl overflow-hidden">
+          <img src="https://via.placeholder.com/150" alt="Samuel Martínez"
+            class="w-32 h-32 mx-auto rounded-full object-cover mb-4 hover:scale-110 hover:brightness-110 transition duration-500">
+          <h3 class="text-xl font-bold">Samuel Martínez</h3>
+          <p class="text-gray-500">Estudiante De DAM</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CONTACTO -->
+  <!-- CONTACTO (con gradiente de botón y hover pulse) -->
   <section id="contacto" class="bg-blue-900 text-white py-24">
     <div class="max-w-3xl mx-auto px-8 fade-in">
       <h2 class="text-4xl font-bold mb-12 text-center">Contacto</h2>
@@ -160,7 +198,7 @@
             class="textarea textarea-bordered w-full bg-white text-black rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-1 transition duration-300"></textarea>
         </div>
         <button type="submit"
-          class="btn bg-white text-blue-900 hover:bg-blue-700 hover:text-white transition duration-300 rounded-lg shadow-lg hover:shadow-2xl w-full py-4 font-semibold uppercase">
+          class="btn bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-700 hover:to-blue-900 text-white transition duration-300 rounded-lg shadow-lg hover:shadow-2xl w-full py-4 font-semibold uppercase hover:animate-pulse">
           Enviar
         </button>
         <p id="mensaje-ok" class="hidden text-green-300 font-semibold text-center mt-4">
@@ -170,8 +208,13 @@
     </div>
   </section>
 
+  <!-- SCROLL TO TOP -->
+  <a href="#inicio" class="fixed bottom-6 right-6 bg-blue-600 text-white p-4 rounded-full shadow-lg hover:shadow-2xl transition duration-300 hover:scale-110">
+    <i class="fas fa-arrow-up"></i>
+  </a>
+
   <!-- FOOTER -->
-  <footer class="bg-black text-gray-300 py-6">
+  <footer class="bg-gradient-to-t from-black to-gray-900 text-gray-300 py-6">
     <div class="max-w-7xl mx-auto px-8 flex justify-between">
       <p>&copy; 2026 NOMBRE. Todos los derechos reservados.</p>
     </div>
@@ -179,10 +222,13 @@
 
   <!-- Animaciones -->
   <style>
-    @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(20px) scale(0.95); } to { opacity: 1; transform: translateY(0) scale(1); } }
     .animate-fadeIn { animation: fadeIn 1.2s ease-out; }
-    .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
-    .fade-in.show { opacity: 1; transform: translateY(0); }
+    .fade-in { opacity: 0; transform: translateY(20px) scale(0.95); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+    .fade-in.show { opacity: 1; transform: translateY(0) scale(1); }
+
+    @keyframes pulse-slow { 0%,100% {opacity: 0.03;} 50% {opacity: 0.08;} }
+    .animate-pulse-slow { animation: pulse-slow 8s infinite; }
   </style>
 
   <script>
