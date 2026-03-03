@@ -99,32 +99,38 @@
   </section>
 
   <!-- CONTACTO -->
-  <section id="contacto" class="bg-blue-900 text-white py-24">
-    <div class="max-w-3xl mx-auto px-8">
-      <h2 class="text-4xl font-bold mb-12">Contacto</h2>
+<section id="contacto" class="bg-blue-900 text-white py-24">
+  <div class="max-w-3xl mx-auto px-8 fade-in">
+    <h2 class="text-4xl font-bold mb-12 text-center">Contacto</h2>
 
-      <form id="formulario" class="space-y-6">
+    <form id="formulario" class="space-y-6">
+
+      <div class="form-control w-full">
         <input type="text" placeholder="Nombre" required
-          class="w-full px-5 py-4 text-black rounded-md shadow focus:outline-none focus:ring-2 focus:ring-blue-500">
+          class="input input-bordered w-full bg-white text-black rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-1 transition duration-300">
+      </div>
 
+      <div class="form-control w-full">
         <input type="email" placeholder="Email" required
-          class="w-full px-5 py-4 text-black rounded-md shadow focus:outline-none focus:ring-2 focus:ring-blue-500">
+          class="input input-bordered w-full bg-white text-black rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-1 transition duration-300">
+      </div>
 
+      <div class="form-control w-full">
         <textarea rows="5" placeholder="Mensaje" required
-          class="w-full px-5 py-4 text-black rounded-md shadow focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+          class="textarea textarea-bordered w-full bg-white text-black rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-1 transition duration-300"></textarea>
+      </div>
 
-        <button type="submit"
-          class="bg-white text-blue-900 px-8 py-4 font-semibold uppercase hover:bg-blue-700 hover:text-white transition duration-300 rounded-md shadow-lg">
-          Enviar
-        </button>
+      <button type="submit"
+        class="btn bg-white text-blue-900 hover:bg-blue-700 hover:text-white transition duration-300 rounded-lg shadow-lg hover:shadow-2xl w-full py-4 font-semibold uppercase">
+        Enviar
+      </button>
 
-        <p id="mensaje-ok" class="hidden text-green-300 font-semibold">
-          Mensaje enviado correctamente.
-        </p>
-      </form>
-    </div>
-  </section>
-
+      <p id="mensaje-ok" class="hidden text-green-300 font-semibold text-center mt-4">
+        Mensaje enviado correctamente.
+      </p>
+    </form>
+  </div>
+</section>
   <!-- FOOTER -->
   <footer class="bg-black text-gray-300 py-6">
     <div class="max-w-7xl mx-auto px-8 flex justify-between">
