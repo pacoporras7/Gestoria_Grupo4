@@ -59,7 +59,7 @@
       <div class="grid md:grid-cols-3 gap-10">
 
         <!-- Card 1 -->
-        <div class="card bg-white shadow-xl rounded-2xl transition-transform duration-300 hover:shadow-2xl hover:-translate-y-1 group">
+        <div class="card fade-in bg-white shadow-xl rounded-2xl transition-transform duration-300 hover:shadow-2xl hover:-translate-y-1 group">
           <figure class="aspect-video overflow-hidden">
             <img src="https://mujeresxmas.com/wp-content/uploads/2022/01/Innovacion-digital-en-que-consiste-y-como-aplica-2.jpg"
               class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
@@ -71,7 +71,7 @@
         </div>
 
         <!-- Card 2 -->
-        <div class="card bg-white shadow-xl rounded-2xl transition-transform duration-300 hover:shadow-2xl hover:-translate-y-1 group">
+        <div class="card fade-in bg-white shadow-xl rounded-2xl transition-transform duration-300 hover:shadow-2xl hover:-translate-y-1 group">
           <figure class="aspect-video overflow-hidden">
             <img src="https://ccbosco.es/wp-content/uploads/2021/05/soluciones-cloud-zaragoza.jpg"
               class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
@@ -83,7 +83,7 @@
         </div>
 
         <!-- Card 3 -->
-        <div class="card bg-white shadow-xl rounded-2xl transition-transform duration-300 hover:shadow-2xl hover:-translate-y-1 group">
+        <div class="card fade-in bg-white shadow-xl rounded-2xl transition-transform duration-300 hover:shadow-2xl hover:-translate-y-1 group">
           <figure class="aspect-video overflow-hidden">
             <img src="https://pasiona.com/wp-content/uploads/2022/06/Ventajas-y-beneficios-del-desarrollo-de-software.jpg"
               class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
@@ -132,14 +132,12 @@
     </div>
   </footer>
 
-  <!-- Animación -->
+  <!-- Animaciones -->
   <style>
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
     .animate-fadeIn { animation: fadeIn 1.2s ease-out; }
+    .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+    .fade-in.show { opacity: 1; transform: translateY(0); }
   </style>
 
   <script>
@@ -148,6 +146,19 @@
       document.getElementById("mensaje-ok").classList.remove("hidden");
       this.reset();
     });
+
+    // Fade-in scroll
+    const faders = document.querySelectorAll('.fade-in');
+    const appearOptions = { threshold: 0.1 };
+    const appearOnScroll = new IntersectionObserver(function(entries, observer){
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('show');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, appearOptions);
+    faders.forEach(fader => appearOnScroll.observe(fader));
   </script>
 
 </body>
