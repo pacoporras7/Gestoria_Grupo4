@@ -4,16 +4,48 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NOMBRE</title>
+  <title>NextGen Code</title>
 
   <!-- Tailwind CSS — framework de utilidades CSS para maquetar y dar estilos rápidamente -->
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Script para el cambio de temas -->
+ <script>
+  tailwind.config = {
+    daisyui: {
+      themes: [
+        {
+          light: {
+            ...fortnightlyThemes("light"), // Cargamos el base claro
+            "primary": "#1e3a8a",          // Tu azul corporativo (blue-900)
+            "base-100": "#ffffff",         // Fondo blanco
+            "base-200": "#f3f4f6",         // Fondo gris clarito (secciones)
+            "base-content": "#111827",     // Texto casi negro
+          },
+          dark: {
+            ...fortnightlyThemes("dark"),  // Cargamos el base oscuro
+            "primary": "#3b82f6",          // Un azul más brillante (blue-500) para que resalte en negro
+            "base-100": "#0f172a",         // Fondo azul muy oscuro/negro
+            "base-200": "#1e293b",         // Fondo gris oscuro (secciones)
+            "base-content": "#f9fafb",     // Texto blanco
+          },
+        },
+      ],
+    },
+  }
+
+  // Función auxiliar para que DaisyUI no de error en el CDN
+  function fortnightlyThemes(theme) {
+    return theme === 'light' ? {} : {}; 
+  }
+</script>
 
   <!-- DaisyUI — librería de componentes UI construida sobre Tailwind (cards, badges, stats, collapse, etc.) -->
   <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
 
   <!-- Google Fonts — carga las fuentes Syne (para títulos/logo) e Inter (para el cuerpo de texto) -->
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet">
 
   <!-- Font Awesome — librería de iconos vectoriales (fa-star, fa-bars, fa-briefcase, etc.) -->
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
@@ -27,7 +59,7 @@
   </style>
 </head>
 
-<body class="bg-white text-gray-900 font-sans scroll-smooth relative" style="font-family: 'Inter', sans-serif;">
+<body class="bg-base-100 text-base-content font-sans scroll-smooth relative" style="font-family: 'Inter', sans-serif;">
 
   <!-- ============================================================
        TOAST — Notificación flotante que aparece al enviar el formulario
@@ -62,11 +94,12 @@
            bg-white/80 + backdrop-blur: efecto de cristal translúcido
            sticky top-0 z-50: se queda pegada al hacer scroll
       ============================================================ -->
-      <header class="border-b bg-white/80 backdrop-blur-md sticky top-0 z-50 shadow-sm">
+      <header class="border-b bg-base-100/80 backdrop-blur-md sticky top-0 z-50 shadow-sm">
         <nav class="max-w-7xl mx-auto flex justify-between items-center px-8 py-5">
 
           <!-- Logo de la empresa — usa fuente Syne para diferenciarlo del cuerpo -->
-          <h1 class="text-2xl font-extrabold tracking-wide text-blue-900" style="font-family: 'Syne', sans-serif;">NextGen Code</h1>
+          <h1 class="text-2xl font-extrabold tracking-wide text-blue-900" style="font-family: 'Syne', sans-serif;">
+            NextGen Code</h1>
 
           <!-- Menú de navegación — solo visible en pantallas medianas y grandes (hidden md:flex) -->
           <ul class="hidden md:flex space-x-10 text-sm font-semibold uppercase tracking-wider">
@@ -77,6 +110,24 @@
             <li><a href="#equipo" class="hover:text-blue-700 transition">Equipo</a></li>
             <li><a href="#contacto" class="hover:text-blue-700 transition">Contacto</a></li>
           </ul>
+          <!-- Controlador de temas claro/oscuro -->
+          <label class="swap swap-rotate">
+            <!-- este caja de chequeo escondida controla el tema -->
+            <input type="checkbox" class="theme-controller" value="synthwave" />
+
+            <!-- icono sol -->
+            <svg class="swap-off h-10 w-10 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path
+                d="M5.64,17l-.71.71a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l.71-.71A1,1,0,0,0,5.64,17ZM5,12a1,1,0,0,0-1-1H3a1,1,0,0,0,0,2H4A1,1,0,0,0,5,12Zm7-7a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4A1,1,0,0,0,12,5ZM5.64,7.05a1,1,0,0,0,.7.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41l-.71-.71A1,1,0,0,0,4.93,6.34Zm12,.29a1,1,0,0,0,.7-.29l.71-.71a1,1,0,1,0-1.41-1.41L17,5.64a1,1,0,0,0,0,1.41A1,1,0,0,0,17.66,7.34ZM21,11H20a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2Zm-9,8a1,1,0,0,0-1,1v1a1,1,0,0,0,2,0V20A1,1,0,0,0,12,19ZM18.36,17A1,1,0,0,0,17,18.36l.71.71a1,1,0,0,0,1.41,0,1,1,0,0,0,0-1.41ZM12,6.5A5.5,5.5,0,1,0,17.5,12,5.51,5.51,0,0,0,12,6.5Zm0,9A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z" />
+            </svg>
+
+            <!-- icono luna -->
+            <svg class="swap-on h-10 w-10 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path
+                d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z" />
+            </svg>
+          </label>
+          <!-- Fin Controlador -->
 
           <!-- Botón hamburguesa — solo visible en móviles (md:hidden)
                Al hacer clic abre el drawer lateral -->
@@ -102,7 +153,9 @@
 
         <!-- Efecto de partículas sutil — radial gradient animado, pointer-events-none para no bloquear clics -->
         <div class="absolute inset-0 pointer-events-none">
-          <div class="w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.03),transparent_70%)] animate-pulse-slow"></div>
+          <div
+            class="w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.03),transparent_70%)] animate-pulse-slow">
+          </div>
         </div>
 
         <!-- Contenido del hero centrado verticalmente -->
@@ -110,19 +163,23 @@
           <div class="max-w-5xl mx-auto px-8 text-white">
 
             <!-- Badge animado — pill con punto parpadeante (animate-ping) que indica la categoría -->
-            <div class="inline-flex items-center gap-2 bg-blue-600/30 border border-blue-400/40 backdrop-blur-sm text-blue-200 text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full mb-6 animate-fadeIn">
+            <div
+              class="inline-flex items-center gap-2 bg-blue-600/30 border border-blue-400/40 backdrop-blur-sm text-blue-200 text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full mb-6 animate-fadeIn">
               <span class="w-2 h-2 bg-blue-400 rounded-full animate-ping inline-block"></span>
               Consultoría Tecnológica
             </div>
 
             <!-- Título principal del héroe -->
-            <h2 class="text-5xl md:text-6xl font-bold leading-tight mb-8 animate-fadeIn">Transformamos el futuro digital</h2>
+            <h2 class="text-5xl md:text-6xl font-bold leading-tight mb-8 animate-fadeIn">Transformamos el futuro digital
+            </h2>
 
             <!-- Descripción corta de la empresa -->
-            <p class="text-xl max-w-2xl mb-10 text-gray-200 animate-fadeIn delay-200">Estrategia, tecnología e innovación para impulsar organizaciones hacia el siguiente nivel.</p>
+            <p class="text-xl max-w-2xl mb-10 text-gray-200 animate-fadeIn delay-200">Estrategia, tecnología e
+              innovación para impulsar organizaciones hacia el siguiente nivel.</p>
 
             <!-- CTA (Call To Action) — botón que lleva a la sección de contacto -->
-            <a href="#contacto" class="bg-gradient-to-r from-blue-500 to-blue-700 text-white px-8 py-4 font-semibold uppercase tracking-wider rounded-lg shadow-lg hover:shadow-2xl hover:brightness-110 transition duration-300 animate-fadeIn delay-400 hover:scale-105">
+            <a href="#contacto"
+              class="bg-gradient-to-r from-blue-500 to-blue-700 text-white px-8 py-4 font-semibold uppercase tracking-wider rounded-lg shadow-lg hover:shadow-2xl hover:brightness-110 transition duration-300 animate-fadeIn delay-400 hover:scale-105">
               Descubrir más
             </a>
           </div>
@@ -188,14 +245,17 @@
           <div class="grid md:grid-cols-3 gap-10">
 
             <!-- Card 1: Transformación Digital — badge "Popular" en amarillo -->
-            <div class="card fade-in bg-white shadow-xl rounded-2xl transition-transform duration-500 hover:shadow-2xl hover:-translate-y-2 hover:scale-105 group relative overflow-hidden hover:bg-gradient-to-r hover:from-blue-50 hover:to-blue-100">
+            <div
+              class="card fade-in bg-base-100 shadow-xl rounded-2xl transition-transform duration-500 hover:shadow-2xl hover:-translate-y-2 hover:scale-105 group relative overflow-hidden hover:bg-gradient-to-r hover:from-blue-50 hover:to-blue-100">
               <!-- Badge superior izquierdo posicionado en absoluto sobre la imagen -->
               <div class="absolute top-3 left-3 z-10">
-                <span class="badge badge-warning gap-1 font-bold shadow-md px-3 py-3 text-xs uppercase tracking-wide"><i class="fas fa-fire text-xs"></i> Popular</span>
+                <span class="badge badge-warning gap-1 font-bold shadow-md px-3 py-3 text-xs uppercase tracking-wide"><i
+                    class="fas fa-fire text-xs"></i> Popular</span>
               </div>
               <figure class="aspect-video overflow-hidden">
                 <!-- Imagen de Unsplash con zoom al hacer hover gracias a group-hover:scale-110 -->
-                <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&q=80" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&q=80"
+                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
               </figure>
               <div class="card-body">
                 <h3 class="card-title">Transformación Digital</h3>
@@ -209,12 +269,16 @@
             </div>
 
             <!-- Card 2: Soluciones Cloud — badge "Nuevo" en verde -->
-            <div class="card fade-in bg-white shadow-xl rounded-2xl transition-transform duration-500 hover:shadow-2xl hover:-translate-y-2 hover:scale-105 group relative overflow-hidden hover:bg-gradient-to-r hover:from-blue-50 hover:to-blue-100">
+            <div
+              class="card fade-in bg-base-100 shadow-xl rounded-2xl transition-transform duration-500 hover:shadow-2xl hover:-translate-y-2 hover:scale-105 group relative overflow-hidden hover:bg-gradient-to-r hover:from-blue-50 hover:to-blue-100">
               <div class="absolute top-3 left-3 z-10">
-                <span class="badge badge-success gap-1 font-bold shadow-md px-3 py-3 text-xs uppercase tracking-wide text-white"><i class="fas fa-star text-xs"></i> Nuevo</span>
+                <span
+                  class="badge badge-success gap-1 font-bold shadow-md px-3 py-3 text-xs uppercase tracking-wide text-white"><i
+                    class="fas fa-star text-xs"></i> Nuevo</span>
               </div>
               <figure class="aspect-video overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=80" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=80"
+                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
               </figure>
               <div class="card-body">
                 <h3 class="card-title">Soluciones Cloud</h3>
@@ -227,12 +291,16 @@
             </div>
 
             <!-- Card 3: Desarrollo de Software — badge "Destacado" en azul info -->
-            <div class="card fade-in bg-white shadow-xl rounded-2xl transition-transform duration-500 hover:shadow-2xl hover:-translate-y-2 hover:scale-105 group relative overflow-hidden hover:bg-gradient-to-r hover:from-blue-50 hover:to-blue-100">
+            <div
+              class="card fade-in bg-base-100 shadow-xl rounded-2xl transition-transform duration-500 hover:shadow-2xl hover:-translate-y-2 hover:scale-105 group relative overflow-hidden hover:bg-gradient-to-r hover:from-blue-50 hover:to-blue-100">
               <div class="absolute top-3 left-3 z-10">
-                <span class="badge badge-info gap-1 font-bold shadow-md px-3 py-3 text-xs uppercase tracking-wide text-white"><i class="fas fa-bolt text-xs"></i> Destacado</span>
+                <span
+                  class="badge badge-info gap-1 font-bold shadow-md px-3 py-3 text-xs uppercase tracking-wide text-white"><i
+                    class="fas fa-bolt text-xs"></i> Destacado</span>
               </div>
               <figure class="aspect-video overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&q=80" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&q=80"
+                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
               </figure>
               <div class="card-body">
                 <h3 class="card-title">Desarrollo de Software</h3>
@@ -257,7 +325,7 @@
            - pagination: muestra puntos clicables debajo
            overflow-hidden en el section evita que las flechas desborden
       ============================================================ -->
-      <section class="py-24 bg-white overflow-hidden" id="comentarios">
+      <section class="py-24 bg-base-200 overflow-hidden" id="comentarios">
         <div class="max-w-4xl mx-auto px-8">
           <h2 class="text-4xl font-extrabold mb-4 text-center text-blue-900">Lo que dicen nuestros clientes</h2>
           <p class="text-center text-gray-500 mb-12">Testimonios de quienes ya confían en nosotros</p>
@@ -270,44 +338,68 @@
 
               <!-- Slide 1 -->
               <div class="swiper-slide">
-                <div class="bg-blue-50 border border-blue-100 rounded-2xl shadow-lg p-10 flex flex-col items-center text-center gap-4">
+                <div
+                  class="bg-blue-50 border border-blue-100 rounded-2xl shadow-lg p-10 flex flex-col items-center text-center gap-4">
                   <!-- Icono de comillas decorativo -->
                   <div class="text-blue-400 text-4xl"><i class="fas fa-quote-left"></i></div>
-                  <p class="text-lg text-gray-700 italic">"Gracias a Jovenes Empresarios transformamos completamente nuestra infraestructura en menos de 3 meses. Resultados excepcionales."</p>
+                  <p class="text-lg text-gray-700 italic">"Gracias a Jovenes Empresarios transformamos completamente
+                    nuestra infraestructura en menos de 3 meses. Resultados excepcionales."</p>
                   <!-- Foto, nombre y cargo del cliente -->
                   <div class="flex items-center gap-3 mt-4">
-                    <img src="https://i.pravatar.cc/60?img=32" class="w-12 h-12 rounded-full object-cover shadow" alt="María López">
-                    <div class="text-left"><p class="font-bold text-blue-900">María López</p><p class="text-sm text-gray-500">CTO · Empresa Logística</p></div>
+                    <img src="https://i.pravatar.cc/60?img=32" class="w-12 h-12 rounded-full object-cover shadow"
+                      alt="María López">
+                    <div class="text-left">
+                      <p class="font-bold text-blue-900">María López</p>
+                      <p class="text-sm text-gray-500">CTO · Empresa Logística</p>
+                    </div>
                   </div>
                   <!-- Valoración con estrellas (5/5) -->
-                  <div class="flex gap-1 text-yellow-400 text-sm"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                  <div class="flex gap-1 text-yellow-400 text-sm"><i class="fas fa-star"></i><i
+                      class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                      class="fas fa-star"></i></div>
                 </div>
               </div>
 
               <!-- Slide 2 -->
               <div class="swiper-slide">
-                <div class="bg-blue-50 border border-blue-100 rounded-2xl shadow-lg p-10 flex flex-col items-center text-center gap-4">
+                <div
+                  class="bg-blue-50 border border-blue-100 rounded-2xl shadow-lg p-10 flex flex-col items-center text-center gap-4">
                   <div class="text-blue-400 text-4xl"><i class="fas fa-quote-left"></i></div>
-                  <p class="text-lg text-gray-700 italic">"El equipo entiende los retos del negocio y los traduce en soluciones técnicas reales. Totalmente recomendables."</p>
+                  <p class="text-lg text-gray-700 italic">"El equipo entiende los retos del negocio y los traduce en
+                    soluciones técnicas reales. Totalmente recomendables."</p>
                   <div class="flex items-center gap-3 mt-4">
-                    <img src="https://i.pravatar.cc/60?img=11" class="w-12 h-12 rounded-full object-cover shadow" alt="Carlos Fernández">
-                    <div class="text-left"><p class="font-bold text-blue-900">Carlos Fernández</p><p class="text-sm text-gray-500">CEO · Startup Fintech</p></div>
+                    <img src="https://i.pravatar.cc/60?img=11" class="w-12 h-12 rounded-full object-cover shadow"
+                      alt="Carlos Fernández">
+                    <div class="text-left">
+                      <p class="font-bold text-blue-900">Carlos Fernández</p>
+                      <p class="text-sm text-gray-500">CEO · Startup Fintech</p>
+                    </div>
                   </div>
-                  <div class="flex gap-1 text-yellow-400 text-sm"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                  <div class="flex gap-1 text-yellow-400 text-sm"><i class="fas fa-star"></i><i
+                      class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                      class="fas fa-star"></i></div>
                 </div>
               </div>
 
               <!-- Slide 3 -->
               <div class="swiper-slide">
-                <div class="bg-blue-50 border border-blue-100 rounded-2xl shadow-lg p-10 flex flex-col items-center text-center gap-4">
+                <div
+                  class="bg-blue-50 border border-blue-100 rounded-2xl shadow-lg p-10 flex flex-col items-center text-center gap-4">
                   <div class="text-blue-400 text-4xl"><i class="fas fa-quote-left"></i></div>
-                  <p class="text-lg text-gray-700 italic">"Implementaron nuestra plataforma cloud con una calidad y velocidad que no esperábamos. Repetiremos sin duda."</p>
+                  <p class="text-lg text-gray-700 italic">"Implementaron nuestra plataforma cloud con una calidad y
+                    velocidad que no esperábamos. Repetiremos sin duda."</p>
                   <div class="flex items-center gap-3 mt-4">
-                    <img src="https://i.pravatar.cc/60?img=47" class="w-12 h-12 rounded-full object-cover shadow" alt="Ana Ruiz">
-                    <div class="text-left"><p class="font-bold text-blue-900">Ana Ruiz</p><p class="text-sm text-gray-500">Directora de Operaciones · Retail</p></div>
+                    <img src="https://i.pravatar.cc/60?img=47" class="w-12 h-12 rounded-full object-cover shadow"
+                      alt="Ana Ruiz">
+                    <div class="text-left">
+                      <p class="font-bold text-blue-900">Ana Ruiz</p>
+                      <p class="text-sm text-gray-500">Directora de Operaciones · Retail</p>
+                    </div>
                   </div>
                   <!-- Media estrella para valoración 4.5/5 -->
-                  <div class="flex gap-1 text-yellow-400 text-sm"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
+                  <div class="flex gap-1 text-yellow-400 text-sm"><i class="fas fa-star"></i><i
+                      class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                      class="fas fa-star-half-alt"></i></div>
                 </div>
               </div>
 
@@ -329,7 +421,7 @@
            type="checkbox" permite abrir y cerrar cada pregunta de forma independiente
            (si fuera type="radio" solo podría estar abierta una a la vez)
       ============================================================ -->
-      <section class="py-24 bg-gray-50" id="preguntas">
+      <section class="py-24 bg-base-200" id="preguntas">
         <div class="max-w-3xl mx-auto px-8">
           <h2 class="text-4xl font-extrabold mb-4 text-center text-blue-900">Preguntas Frecuentes</h2>
           <p class="text-center text-gray-500 mb-12">Todo lo que necesitas saber antes de empezar</p>
@@ -338,29 +430,45 @@
             <!-- Pregunta 1 — el checkbox controla si está abierta o cerrada -->
             <div class="collapse collapse-arrow bg-white border border-blue-100 rounded-2xl shadow-sm">
               <input type="checkbox" />
-              <div class="collapse-title text-lg font-semibold text-blue-900">¿Cuánto tiempo tarda un proyecto típico?</div>
-              <div class="collapse-content text-gray-600"><p>Depende del alcance, pero la mayoría de nuestros proyectos se entregan en un plazo de 4 a 12 semanas. Realizamos una estimación detallada en la fase inicial sin coste.</p></div>
+              <div class="collapse-title text-lg font-semibold text-blue-900">¿Cuánto tiempo tarda un proyecto típico?
+              </div>
+              <div class="collapse-content text-gray-600">
+                <p>Depende del alcance, pero la mayoría de nuestros proyectos se entregan en un plazo de 4 a 12 semanas.
+                  Realizamos una estimación detallada en la fase inicial sin coste.</p>
+              </div>
             </div>
 
             <!-- Pregunta 2 -->
             <div class="collapse collapse-arrow bg-white border border-blue-100 rounded-2xl shadow-sm">
               <input type="checkbox" />
-              <div class="collapse-title text-lg font-semibold text-blue-900">¿Trabajáis con empresas pequeñas o solo grandes corporaciones?</div>
-              <div class="collapse-content text-gray-600"><p>Trabajamos con todo tipo de organizaciones, desde startups en fase inicial hasta grandes empresas. Adaptamos nuestros servicios y precios a cada caso.</p></div>
+              <div class="collapse-title text-lg font-semibold text-blue-900">¿Trabajáis con empresas pequeñas o solo
+                grandes corporaciones?</div>
+              <div class="collapse-content text-gray-600">
+                <p>Trabajamos con todo tipo de organizaciones, desde startups en fase inicial hasta grandes empresas.
+                  Adaptamos nuestros servicios y precios a cada caso.</p>
+              </div>
             </div>
 
             <!-- Pregunta 3 -->
             <div class="collapse collapse-arrow bg-white border border-blue-100 rounded-2xl shadow-sm">
               <input type="checkbox" />
-              <div class="collapse-title text-lg font-semibold text-blue-900">¿Ofrecéis soporte tras la entrega del proyecto?</div>
-              <div class="collapse-content text-gray-600"><p>Sí, ofrecemos planes de mantenimiento y soporte continuo. Nuestro equipo está disponible para resolver incidencias y evolucionar la solución con el tiempo.</p></div>
+              <div class="collapse-title text-lg font-semibold text-blue-900">¿Ofrecéis soporte tras la entrega del
+                proyecto?</div>
+              <div class="collapse-content text-gray-600">
+                <p>Sí, ofrecemos planes de mantenimiento y soporte continuo. Nuestro equipo está disponible para
+                  resolver incidencias y evolucionar la solución con el tiempo.</p>
+              </div>
             </div>
 
             <!-- Pregunta 4 -->
             <div class="collapse collapse-arrow bg-white border border-blue-100 rounded-2xl shadow-sm">
               <input type="checkbox" />
-              <div class="collapse-title text-lg font-semibold text-blue-900">¿Cómo es el proceso para empezar a trabajar juntos?</div>
-              <div class="collapse-content text-gray-600"><p>Muy sencillo: rellena el formulario de contacto, agendamos una reunión inicial gratuita, analizamos tu caso y te enviamos una propuesta en menos de 48 horas.</p></div>
+              <div class="collapse-title text-lg font-semibold text-blue-900">¿Cómo es el proceso para empezar a
+                trabajar juntos?</div>
+              <div class="collapse-content text-gray-600">
+                <p>Muy sencillo: rellena el formulario de contacto, agendamos una reunión inicial gratuita, analizamos
+                  tu caso y te enviamos una propuesta en menos de 48 horas.</p>
+              </div>
             </div>
 
           </div>
@@ -377,57 +485,105 @@
            entran en el viewport gracias a IntersectionObserver + requestAnimationFrame
            Cada miembro tiene un color de barra distinto (info/success/warning/error)
       ============================================================ -->
-      <section id="equipo" class="py-24 bg-gray-100">
+      <section id="equipo" class="py-24 bg-base-300 transition-colors duration-300">
         <div class="max-w-7xl mx-auto px-8">
-          <h2 class="text-4xl font-extrabold mb-16 text-center text-blue-900">Nuestro Equipo</h2>
+          <h2 class="text-4xl font-extrabold mb-16 text-center text-">Nuestro Equipo</h2>
           <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-10">
 
             <!-- Miembro 1: Simona — barras en azul (progress-info) -->
-            <div class="fade-in bg-white rounded-2xl shadow-xl p-6 text-center transition-transform duration-500 hover:scale-105 hover:shadow-2xl overflow-hidden">
-              <img src="https://ancoya-my.sharepoint.com/personal/sergio_vega_estudiante_xtart_com/Documents/Entrega%20Proyecto%20Intermodular%20Final/mapajuego/Simona.jpeg" alt="Simona Georgiana" class="w-32 h-32 mx-auto rounded-full object-cover mb-4">
+            <div
+              class="fade-in bg-base-100 rounded-2xl shadow-xl p-6 text-center transition-transform duration-500 hover:scale-105 hover:shadow-2xl overflow-hidden">
+              <img
+                src="https://ancoya-my.sharepoint.com/personal/sergio_vega_estudiante_xtart_com/Documents/Entrega%20Proyecto%20Intermodular%20Final/mapajuego/Simona.jpeg"
+                alt="Simona Georgiana" class="w-32 h-32 mx-auto rounded-full object-cover mb-4">
               <h3 class="text-xl font-bold mb-1">Simona Georgiana</h3>
               <p class="text-gray-500 text-sm mb-5">Coordinadora</p>
               <div class="text-left space-y-3">
                 <!-- Barra con etiqueta de habilidad y porcentaje -->
-                <div><div class="flex justify-between text-xs text-gray-500 mb-1"><span>Frontend</span><span>90%</span></div><progress class="progress progress-info w-full" value="90" max="100"></progress></div>
-                <div><div class="flex justify-between text-xs text-gray-500 mb-1"><span>UX/UI</span><span>80%</span></div><progress class="progress progress-info w-full" value="80" max="100"></progress></div>
-                <div><div class="flex justify-between text-xs text-gray-500 mb-1"><span>Java</span><span>70%</span></div><progress class="progress progress-info w-full" value="70" max="100"></progress></div>
+                <div>
+                  <div class="flex justify-between text-xs text-gray-500 mb-1"><span>Frontend</span><span>90%</span>
+                  </div><progress class="progress progress-info w-full" value="90" max="100"></progress>
+                </div>
+                <div>
+                  <div class="flex justify-between text-xs text-gray-500 mb-1"><span>UX/UI</span><span>80%</span></div>
+                  <progress class="progress progress-info w-full" value="80" max="100"></progress>
+                </div>
+                <div>
+                  <div class="flex justify-between text-xs text-gray-500 mb-1"><span>Java</span><span>70%</span></div>
+                  <progress class="progress progress-info w-full" value="70" max="100"></progress>
+                </div>
               </div>
             </div>
 
             <!-- Miembro 2: Rodrigo — barras en verde (progress-success) -->
-            <div class="fade-in bg-white rounded-2xl shadow-xl p-6 text-center transition-transform duration-500 hover:scale-105 hover:shadow-2xl overflow-hidden">
-              <img src="https://ancoya-my.sharepoint.com/personal/sergio_vega_estudiante_xtart_com/Documents/Entrega%20Proyecto%20Intermodular%20Final/mapajuego/Rodri.jpeg" alt="Rodrigo Sánchez" class="w-32 h-32 mx-auto rounded-full object-cover mb-4">
+            <div
+              class="fade-in bg-base-100 rounded-2xl shadow-xl p-6 text-center transition-transform duration-500 hover:scale-105 hover:shadow-2xl overflow-hidden">
+              <img
+                src="https://ancoya-my.sharepoint.com/personal/sergio_vega_estudiante_xtart_com/Documents/Entrega%20Proyecto%20Intermodular%20Final/mapajuego/Rodri.jpeg"
+                alt="Rodrigo Sánchez" class="w-32 h-32 mx-auto rounded-full object-cover mb-4">
               <h3 class="text-xl font-bold mb-1">Rodrigo Sánchez</h3>
               <p class="text-gray-500 text-sm mb-5">Jefe de Backend</p>
               <div class="text-left space-y-3">
-                <div><div class="flex justify-between text-xs text-gray-500 mb-1"><span>Backend</span><span>85%</span></div><progress class="progress progress-success w-full" value="85" max="100"></progress></div>
-                <div><div class="flex justify-between text-xs text-gray-500 mb-1"><span>SQL</span><span>75%</span></div><progress class="progress progress-success w-full" value="75" max="100"></progress></div>
-                <div><div class="flex justify-between text-xs text-gray-500 mb-1"><span>APIs REST</span><span>80%</span></div><progress class="progress progress-success w-full" value="80" max="100"></progress></div>
+                <div>
+                  <div class="flex justify-between text-xs text-gray-500 mb-1"><span>Backend</span><span>85%</span>
+                  </div><progress class="progress progress-success w-full" value="85" max="100"></progress>
+                </div>
+                <div>
+                  <div class="flex justify-between text-xs text-gray-500 mb-1"><span>SQL</span><span>75%</span></div>
+                  <progress class="progress progress-success w-full" value="75" max="100"></progress>
+                </div>
+                <div>
+                  <div class="flex justify-between text-xs text-gray-500 mb-1"><span>APIs REST</span><span>80%</span>
+                  </div><progress class="progress progress-success w-full" value="80" max="100"></progress>
+                </div>
               </div>
             </div>
 
             <!-- Miembro 3: Sergio — barras en amarillo (progress-warning) -->
-            <div class="fade-in bg-white rounded-2xl shadow-xl p-6 text-center transition-transform duration-500 hover:scale-105 hover:shadow-2xl overflow-hidden">
-              <img src="https://ancoya-my.sharepoint.com/personal/sergio_vega_estudiante_xtart_com/Documents/Entrega%20Proyecto%20Intermodular%20Final/mapajuego/Sergio.jpeg" alt="Sergio Vega" class="w-32 h-32 mx-auto rounded-full object-cover mb-4">
+            <div
+              class="fade-in bg-base-100 rounded-2xl shadow-xl p-6 text-center transition-transform duration-500 hover:scale-105 hover:shadow-2xl overflow-hidden">
+              <img
+                src="https://ancoya-my.sharepoint.com/personal/sergio_vega_estudiante_xtart_com/Documents/Entrega%20Proyecto%20Intermodular%20Final/mapajuego/Sergio.jpeg"
+                alt="Sergio Vega" class="w-32 h-32 mx-auto rounded-full object-cover mb-4">
               <h3 class="text-xl font-bold mb-1">Sergio Vega</h3>
               <p class="text-gray-500 text-sm mb-5">Jefe</p>
               <div class="text-left space-y-3">
-                <div><div class="flex justify-between text-xs text-gray-500 mb-1"><span>Cloud</span><span>88%</span></div><progress class="progress progress-warning w-full" value="88" max="100"></progress></div>
-                <div><div class="flex justify-between text-xs text-gray-500 mb-1"><span>DevOps</span><span>72%</span></div><progress class="progress progress-warning w-full" value="72" max="100"></progress></div>
-                <div><div class="flex justify-between text-xs text-gray-500 mb-1"><span>Docker</span><span>78%</span></div><progress class="progress progress-warning w-full" value="78" max="100"></progress></div>
+                <div>
+                  <div class="flex justify-between text-xs text-gray-500 mb-1"><span>Cloud</span><span>88%</span></div>
+                  <progress class="progress progress-warning w-full" value="88" max="100"></progress>
+                </div>
+                <div>
+                  <div class="flex justify-between text-xs text-gray-500 mb-1"><span>DevOps</span><span>72%</span></div>
+                  <progress class="progress progress-warning w-full" value="72" max="100"></progress>
+                </div>
+                <div>
+                  <div class="flex justify-between text-xs text-gray-500 mb-1"><span>Docker</span><span>78%</span></div>
+                  <progress class="progress progress-warning w-full" value="78" max="100"></progress>
+                </div>
               </div>
             </div>
 
             <!-- Miembro 4: Samuel — barras en rojo (progress-error) -->
-            <div class="fade-in bg-white rounded-2xl shadow-xl p-6 text-center transition-transform duration-500 hover:scale-105 hover:shadow-2xl overflow-hidden">
-              <img src="https://ancoya-my.sharepoint.com/personal/sergio_vega_estudiante_xtart_com/Documents/Entrega%20Proyecto%20Intermodular%20Final/mapajuego/Samuel.jpeg" alt="Samuel Martínez" class="w-32 h-32 mx-auto rounded-full object-cover mb-4">
+            <div
+              class="fade-in bg-base-100 rounded-2xl shadow-xl p-6 text-center transition-transform duration-500 hover:scale-105 hover:shadow-2xl overflow-hidden">
+              <img
+                src="https://ancoya-my.sharepoint.com/personal/sergio_vega_estudiante_xtart_com/Documents/Entrega%20Proyecto%20Intermodular%20Final/mapajuego/Samuel.jpeg"
+                alt="Samuel Martínez" class="w-32 h-32 mx-auto rounded-full object-cover mb-4">
               <h3 class="text-xl font-bold mb-1">Samuel Martínez</h3>
               <p class="text-gray-500 text-sm mb-5">Jefe De Frontend</p>
               <div class="text-left space-y-3">
-                <div><div class="flex justify-between text-xs text-gray-500 mb-1"><span>Android</span><span>92%</span></div><progress class="progress progress-error w-full" value="92" max="100"></progress></div>
-                <div><div class="flex justify-between text-xs text-gray-500 mb-1"><span>Kotlin</span><span>85%</span></div><progress class="progress progress-error w-full" value="85" max="100"></progress></div>
-                <div><div class="flex justify-between text-xs text-gray-500 mb-1"><span>Firebase</span><span>76%</span></div><progress class="progress progress-error w-full" value="76" max="100"></progress></div>
+                <div>
+                  <div class="flex justify-between text-xs text-gray-500 mb-1"><span>Android</span><span>92%</span>
+                  </div><progress class="progress progress-error w-full" value="92" max="100"></progress>
+                </div>
+                <div>
+                  <div class="flex justify-between text-xs text-gray-500 mb-1"><span>Kotlin</span><span>85%</span></div>
+                  <progress class="progress progress-error w-full" value="85" max="100"></progress>
+                </div>
+                <div>
+                  <div class="flex justify-between text-xs text-gray-500 mb-1"><span>Firebase</span><span>76%</span>
+                  </div><progress class="progress progress-error w-full" value="76" max="100"></progress>
+                </div>
               </div>
             </div>
 
@@ -447,21 +603,25 @@
 
             <!-- Campo nombre -->
             <div class="form-control w-full">
-              <input type="text" placeholder="Nombre" required class="input input-bordered w-full bg-white text-black rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300">
+              <input type="text" placeholder="Nombre" required
+                class="input input-bordered w-full bg-base-100 text-base-content rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300">
             </div>
 
             <!-- Campo email -->
             <div class="form-control w-full">
-              <input type="email" placeholder="Email" required class="input input-bordered w-full bg-white text-black rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300">
+              <input type="email" placeholder="Email" required
+                class="input input-bordered w-full bg-base-100 text-base-content rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300">
             </div>
 
             <!-- Campo mensaje (textarea multilínea) -->
             <div class="form-control w-full">
-              <textarea rows="5" placeholder="Mensaje" required class="textarea textarea-bordered w-full bg-white text-black rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300"></textarea>
+              <textarea rows="5" placeholder="Mensaje" required
+                class="textarea textarea-bordered w-full bg-base-100 text-base-content rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300"></textarea>
             </div>
 
             <!-- Botón de envío — gradiente azul con hover más oscuro -->
-            <button type="submit" class="btn bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-700 hover:to-blue-900 text-white transition duration-300 rounded-lg shadow-lg hover:shadow-2xl w-full py-4 font-semibold uppercase">
+            <button type="submit"
+              class="btn bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-700 hover:to-blue-900 text-base-content transition duration-300 rounded-lg shadow-lg hover:shadow-2xl w-full py-4 font-semibold uppercase">
               Enviar
             </button>
           </form>
@@ -473,7 +633,8 @@
            Al hacer clic vuelve al inicio de la página (#inicio)
            fixed bottom-6 right-6: posición fija en pantalla
       ============================================================ -->
-      <a href="#inicio" class="fixed bottom-6 right-6 bg-blue-600 text-white p-4 rounded-full shadow-lg hover:shadow-2xl transition duration-300 hover:scale-110 z-50">
+      <a href="#inicio"
+        class="fixed bottom-6 right-6 bg-blue-600 text-base-content p-4 rounded-full shadow-lg hover:shadow-2xl transition duration-300 hover:scale-110 z-50">
         <i class="fas fa-arrow-up"></i>
       </a>
 
@@ -500,14 +661,18 @@
       <label for="mobile-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
 
       <!-- Menú lateral — fondo azul oscuro con los mismos enlaces que el header -->
-      <ul class="menu bg-blue-900 text-white min-h-full w-64 p-6 gap-2">
+      <ul class="menu bg-blue-900 text-base-content min-h-full w-64 p-6 gap-2">
         <li class="mb-6">
           <span class="text-xl font-extrabold tracking-wide" style="font-family: 'Syne', sans-serif;">Free Anuel</span>
         </li>
-        <li><a href="#inicio" class="text-lg font-semibold hover:bg-blue-700 rounded-lg px-4 py-3" onclick="document.getElementById('mobile-drawer').checked=false">Inicio</a></li>
-        <li><a href="#servicios" class="text-lg font-semibold hover:bg-blue-700 rounded-lg px-4 py-3" onclick="document.getElementById('mobile-drawer').checked=false">Servicios</a></li>
-        <li><a href="#equipo" class="text-lg font-semibold hover:bg-blue-700 rounded-lg px-4 py-3" onclick="document.getElementById('mobile-drawer').checked=false">Equipo</a></li>
-        <li><a href="#contacto" class="text-lg font-semibold hover:bg-blue-700 rounded-lg px-4 py-3" onclick="document.getElementById('mobile-drawer').checked=false">Contacto</a></li>
+        <li><a href="#inicio" class="text-lg font-semibold hover:bg-blue-700 rounded-lg px-4 py-3"
+            onclick="document.getElementById('mobile-drawer').checked=false">Inicio</a></li>
+        <li><a href="#servicios" class="text-lg font-semibold hover:bg-blue-700 rounded-lg px-4 py-3"
+            onclick="document.getElementById('mobile-drawer').checked=false">Servicios</a></li>
+        <li><a href="#equipo" class="text-lg font-semibold hover:bg-blue-700 rounded-lg px-4 py-3"
+            onclick="document.getElementById('mobile-drawer').checked=false">Equipo</a></li>
+        <li><a href="#contacto" class="text-lg font-semibold hover:bg-blue-700 rounded-lg px-4 py-3"
+            onclick="document.getElementById('mobile-drawer').checked=false">Contacto</a></li>
       </ul>
     </div>
 
@@ -521,31 +686,101 @@
        (todo lo que Tailwind no puede hacer directamente con clases)
   ============================================================ -->
   <style>
+    /* estilo para que no sea tam brusco el cambio de temas de la pagina */
+
+    html {
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
     /* Animación fadeIn — los elementos entran desde abajo con opacidad 0 a 1 */
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px) scale(0.95); }
-      to   { opacity: 1; transform: translateY(0)    scale(1);    }
+      from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.95);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
     }
-    .animate-fadeIn { animation: fadeIn 1.2s ease-out; }
+
+    .animate-fadeIn {
+      animation: fadeIn 1.2s ease-out;
+    }
 
     /* fade-in — clase para elementos que se revelan al hacer scroll
        El JS con IntersectionObserver añade la clase "show" cuando el elemento entra en pantalla */
-    .fade-in { opacity: 0; transform: translateY(20px) scale(0.95); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
-    .fade-in.show { opacity: 1; transform: translateY(0) scale(1); }
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px) scale(0.95);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+
+    .fade-in.show {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
 
     /* pulse-slow — efecto de parpadeo lento para el radial gradient del hero */
-    @keyframes pulse-slow { 0%,100% { opacity: 0.03; } 50% { opacity: 0.08; } }
-    .animate-pulse-slow { animation: pulse-slow 8s infinite; }
+    @keyframes pulse-slow {
+
+      0%,
+      100% {
+        opacity: 0.03;
+      }
+
+      50% {
+        opacity: 0.08;
+      }
+    }
+
+    .animate-pulse-slow {
+      animation: pulse-slow 8s infinite;
+    }
 
     /* Animaciones de entrada y salida del toast */
-    @keyframes toastIn  { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-    @keyframes toastOut { from { opacity: 1; transform: translateY(0);    } to { opacity: 0; transform: translateY(20px); } }
-    .toast-show { animation: toastIn  0.4s ease-out forwards; }
-    .toast-hide { animation: toastOut 0.4s ease-in  forwards; }
+    @keyframes toastIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes toastOut {
+      from {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      to {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+    }
+
+    .toast-show {
+      animation: toastIn 0.4s ease-out forwards;
+    }
+
+    .toast-hide {
+      animation: toastOut 0.4s ease-in forwards;
+    }
 
     /* Color de las flechas y puntos del Swiper — sobreescribe el color por defecto */
-    .swiper-button-prev, .swiper-button-next { color: #1e3a8a !important; }
-    .swiper-pagination-bullet-active { background: #1e3a8a !important; }
+    .swiper-button-prev,
+    .swiper-button-next {
+      color: #1e3a8a !important;
+    }
+
+    .swiper-pagination-bullet-active {
+      background: gray !important;
+    }
   </style>
 
   <!-- ============================================================
@@ -582,7 +817,7 @@
        lo oculta automáticamente tras 3.5 segundos,
        y limpia los campos del formulario
     ──────────────────────────────────────────────────────────── */
-    document.getElementById("formulario").addEventListener("submit", function(e) {
+    document.getElementById("formulario").addEventListener("submit", function (e) {
       e.preventDefault(); // Evita que la página se recargue al enviar
 
       const toast = document.getElementById("toast-container");
@@ -642,7 +877,7 @@
        unobserve: deja de observar el elemento una vez animado (eficiencia)
     ──────────────────────────────────────────────────────────── */
     const faders = document.querySelectorAll('.fade-in');
-    const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+    const appearOnScroll = new IntersectionObserver(function (entries, observer) {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('show');
@@ -653,7 +888,32 @@
 
     faders.forEach(fader => appearOnScroll.observe(fader));
 
+
+
+    /* CONTROLADOR DE TEMAS */
+    const themeController = document.querySelector('.theme-controller');
+    const htmlElement = document.documentElement;
+
+    //Cargar el tema guardado al iniciar
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    htmlElement.setAttribute('data-theme', savedTheme);
+    if (themeController) {
+      themeController.checked = savedTheme === 'synthwave';
+    }
+
+    // Escuchar el cambio en el switch
+    themeController.addEventListener('change', (e) => {
+      const newTheme = e.target.checked ? 'synthwave' : 'light';
+
+      // Aplicar el tema al HTML
+      htmlElement.setAttribute('data-theme', newTheme);
+
+      // Guardar la preferencia
+      localStorage.setItem('theme', newTheme);
+    });
+
   </script>
 
 </body>
+
 </html>
