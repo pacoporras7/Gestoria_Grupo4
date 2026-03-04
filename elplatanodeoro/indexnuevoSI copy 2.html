@@ -13,308 +13,304 @@
 
 <body class="bg-white text-gray-900 font-sans scroll-smooth relative" style="font-family: 'Inter', sans-serif;">
 
-  <!-- HEADER -->
-  <header class="border-b bg-white/80 backdrop-blur-md sticky top-0 z-50 shadow-sm">
-    <nav class="max-w-7xl mx-auto flex justify-between items-center px-8 py-5">
-      <h1 class="text-2xl font-extrabold tracking-wide text-blue-900" style="font-family: 'Syne', sans-serif;">Free Anuel</h1>
-      <ul class="hidden md:flex space-x-10 text-sm font-semibold uppercase tracking-wider">
-        <li><a href="#inicio" class="hover:text-blue-700 transition">Inicio</a></li>
-        <li><a href="#servicios" class="hover:text-blue-700 transition">Servicios</a></li>
-        <li><a href="#equipo" class="hover:text-blue-700 transition">Equipo</a></li>
-        <li><a href="#contacto" class="hover:text-blue-700 transition">Contacto</a></li>
+  <!-- ✅ NUEVO: DRAWER MÓVIL (DaisyUI) — envuelve todo el body -->
+  <div class="drawer">
+    <input id="mobile-drawer" type="checkbox" class="drawer-toggle" />
+
+    <!-- Contenido principal -->
+    <div class="drawer-content flex flex-col">
+
+      <!-- HEADER -->
+      <header class="border-b bg-white/80 backdrop-blur-md sticky top-0 z-50 shadow-sm">
+        <nav class="max-w-7xl mx-auto flex justify-between items-center px-8 py-5">
+          <h1 class="text-2xl font-extrabold tracking-wide text-blue-900" style="font-family: 'Syne', sans-serif;">Free Anuel</h1>
+
+          <!-- Menú desktop -->
+          <ul class="hidden md:flex space-x-10 text-sm font-semibold uppercase tracking-wider">
+            <li><a href="#inicio" class="hover:text-blue-700 transition">Inicio</a></li>
+            <li><a href="#servicios" class="hover:text-blue-700 transition">Servicios</a></li>
+            <li><a href="#equipo" class="hover:text-blue-700 transition">Equipo</a></li>
+            <li><a href="#contacto" class="hover:text-blue-700 transition">Contacto</a></li>
+          </ul>
+
+          <!-- Botón hamburguesa solo en móvil -->
+          <label for="mobile-drawer" class="btn btn-ghost md:hidden">
+            <i class="fas fa-bars text-xl text-blue-900"></i>
+          </label>
+        </nav>
+      </header>
+
+      <!-- HERO -->
+      <section id="inicio" class="relative h-screen overflow-hidden">
+        <video autoplay muted loop playsinline class="absolute w-full h-full object-cover">
+          <source src="video-corporativo.mp4" type="video/mp4">
+        </video>
+        <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-black/70"></div>
+        <div class="absolute inset-0 pointer-events-none">
+          <div class="w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.03),transparent_70%)] animate-pulse-slow"></div>
+        </div>
+        <div class="relative z-10 flex items-center h-full">
+          <div class="max-w-5xl mx-auto px-8 text-white">
+            <div class="inline-flex items-center gap-2 bg-blue-600/30 border border-blue-400/40 backdrop-blur-sm text-blue-200 text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full mb-6 animate-fadeIn">
+              <span class="w-2 h-2 bg-blue-400 rounded-full animate-ping inline-block"></span>
+              Consultoría Tecnológica
+            </div>
+            <h2 class="text-5xl md:text-6xl font-bold leading-tight mb-8 animate-fadeIn">Transformamos el futuro digital</h2>
+            <p class="text-xl max-w-2xl mb-10 text-gray-200 animate-fadeIn delay-200">Estrategia, tecnología e innovación para impulsar organizaciones hacia el siguiente nivel.</p>
+            <a href="#contacto" class="bg-gradient-to-r from-blue-500 to-blue-700 text-white px-8 py-4 font-semibold uppercase tracking-wider rounded-lg shadow-lg hover:shadow-2xl hover:brightness-110 transition duration-300 animate-fadeIn delay-400 hover:scale-105">
+              Descubrir más
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ESTADÍSTICAS -->
+      <section class="py-16 bg-blue-900">
+        <div class="max-w-5xl mx-auto px-8">
+          <div class="stats stats-vertical lg:stats-horizontal shadow w-full bg-blue-800 text-white rounded-2xl">
+            <div class="stat text-center">
+              <div class="stat-figure text-blue-300"><i class="fas fa-briefcase text-3xl"></i></div>
+              <div class="stat-title text-blue-200">Proyectos completados</div>
+              <div class="stat-value text-white">+120</div>
+              <div class="stat-desc text-blue-300">Desde 2018</div>
+            </div>
+            <div class="stat text-center">
+              <div class="stat-figure text-blue-300"><i class="fas fa-users text-3xl"></i></div>
+              <div class="stat-title text-blue-200">Clientes satisfechos</div>
+              <div class="stat-value text-white">98%</div>
+              <div class="stat-desc text-blue-300">Tasa de satisfacción</div>
+            </div>
+            <div class="stat text-center">
+              <div class="stat-figure text-blue-300"><i class="fas fa-globe text-3xl"></i></div>
+              <div class="stat-title text-blue-200">Países</div>
+              <div class="stat-value text-white">12</div>
+              <div class="stat-desc text-blue-300">Presencia internacional</div>
+            </div>
+            <div class="stat text-center">
+              <div class="stat-figure text-blue-300"><i class="fas fa-code text-3xl"></i></div>
+              <div class="stat-title text-blue-200">Líneas de código</div>
+              <div class="stat-value text-white">2M+</div>
+              <div class="stat-desc text-blue-300">En producción</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SERVICIOS -->
+      <section id="servicios" class="py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-8">
+          <h2 class="text-4xl font-extrabold mb-16 text-center text-blue-900">Nuestros Servicios</h2>
+          <div class="grid md:grid-cols-3 gap-10">
+            <div class="card fade-in bg-white shadow-xl rounded-2xl transition-transform duration-500 hover:shadow-2xl hover:-translate-y-2 hover:scale-105 group relative overflow-hidden hover:bg-gradient-to-r hover:from-blue-50 hover:to-blue-100">
+              <figure class="aspect-video overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&q=80" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+              </figure>
+              <div class="card-body">
+                <h3 class="card-title">Transformación Digital</h3>
+                <p>Modernización de procesos y estrategia tecnológica.</p>
+              </div>
+            </div>
+            <div class="card fade-in bg-white shadow-xl rounded-2xl transition-transform duration-500 hover:shadow-2xl hover:-translate-y-2 hover:scale-105 group relative overflow-hidden hover:bg-gradient-to-r hover:from-blue-50 hover:to-blue-100">
+              <figure class="aspect-video overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=80" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+              </figure>
+              <div class="card-body">
+                <h3 class="card-title">Soluciones Cloud</h3>
+                <p>Infraestructura escalable, segura y eficiente.</p>
+              </div>
+            </div>
+            <div class="card fade-in bg-white shadow-xl rounded-2xl transition-transform duration-500 hover:shadow-2xl hover:-translate-y-2 hover:scale-105 group relative overflow-hidden hover:bg-gradient-to-r hover:from-blue-50 hover:to-blue-100">
+              <figure class="aspect-video overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&q=80" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+              </figure>
+              <div class="card-body">
+                <h3 class="card-title">Desarrollo de Software</h3>
+                <p>Aplicaciones web y sistemas empresariales a medida.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CARRUSEL -->
+      <section class="py-24 bg-white">
+        <div class="max-w-4xl mx-auto px-8">
+          <h2 class="text-4xl font-extrabold mb-4 text-center text-blue-900">Lo que dicen nuestros clientes</h2>
+          <p class="text-center text-gray-500 mb-12">Testimonios de quienes ya confían en nosotros</p>
+          <div class="relative flex items-center gap-4">
+            <button id="prev-btn" class="btn btn-circle bg-blue-900 text-white border-none hover:bg-blue-700 shadow-md flex-shrink-0">❮</button>
+            <div class="overflow-hidden w-full rounded-2xl">
+              <div id="carousel-track" class="flex transition-transform duration-500 ease-in-out">
+
+                <div class="carousel-slide min-w-full">
+                  <div class="bg-blue-50 border border-blue-100 rounded-2xl shadow-lg p-10 flex flex-col items-center text-center gap-4">
+                    <div class="text-blue-400 text-4xl"><i class="fas fa-quote-left"></i></div>
+                    <p class="text-lg text-gray-700 max-w-2xl italic">"Gracias a Free Anuel transformamos completamente nuestra infraestructura en menos de 3 meses. Resultados excepcionales."</p>
+                    <div class="flex items-center gap-3 mt-4">
+                      <img src="https://i.pravatar.cc/60?img=11" class="w-12 h-12 rounded-full object-cover shadow" alt="María López">
+                      <div class="text-left"><p class="font-bold text-blue-900">María López</p><p class="text-sm text-gray-500">CTO · Empresa Logística</p></div>
+                    </div>
+                    <div class="flex gap-1 text-yellow-400 text-sm"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                  </div>
+                </div>
+
+                <div class="carousel-slide min-w-full">
+                  <div class="bg-blue-50 border border-blue-100 rounded-2xl shadow-lg p-10 flex flex-col items-center text-center gap-4">
+                    <div class="text-blue-400 text-4xl"><i class="fas fa-quote-left"></i></div>
+                    <p class="text-lg text-gray-700 max-w-2xl italic">"El equipo entiende los retos del negocio y los traduce en soluciones técnicas reales. Totalmente recomendables."</p>
+                    <div class="flex items-center gap-3 mt-4">
+                      <img src="https://i.pravatar.cc/60?img=32" class="w-12 h-12 rounded-full object-cover shadow" alt="Carlos Fernández">
+                      <div class="text-left"><p class="font-bold text-blue-900">Carlos Fernández</p><p class="text-sm text-gray-500">CEO · Startup Fintech</p></div>
+                    </div>
+                    <div class="flex gap-1 text-yellow-400 text-sm"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                  </div>
+                </div>
+
+                <div class="carousel-slide min-w-full">
+                  <div class="bg-blue-50 border border-blue-100 rounded-2xl shadow-lg p-10 flex flex-col items-center text-center gap-4">
+                    <div class="text-blue-400 text-4xl"><i class="fas fa-quote-left"></i></div>
+                    <p class="text-lg text-gray-700 max-w-2xl italic">"Implementaron nuestra plataforma cloud con una calidad y velocidad que no esperábamos. Repetiremos sin duda."</p>
+                    <div class="flex items-center gap-3 mt-4">
+                      <img src="https://i.pravatar.cc/60?img=47" class="w-12 h-12 rounded-full object-cover shadow" alt="Ana Ruiz">
+                      <div class="text-left"><p class="font-bold text-blue-900">Ana Ruiz</p><p class="text-sm text-gray-500">Directora de Operaciones · Retail</p></div>
+                    </div>
+                    <div class="flex gap-1 text-yellow-400 text-sm"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <button id="next-btn" class="btn btn-circle bg-blue-900 text-white border-none hover:bg-blue-700 shadow-md flex-shrink-0">❯</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ✅ FAQ CORREGIDO: checkbox en vez de radio → se puede abrir Y cerrar -->
+      <section class="py-24 bg-gray-50">
+        <div class="max-w-3xl mx-auto px-8">
+          <h2 class="text-4xl font-extrabold mb-4 text-center text-blue-900">Preguntas Frecuentes</h2>
+          <p class="text-center text-gray-500 mb-12">Todo lo que necesitas saber antes de empezar</p>
+
+          <div class="flex flex-col gap-3">
+
+            <div class="collapse collapse-arrow bg-white border border-blue-100 rounded-2xl shadow-sm">
+              <input type="checkbox" />
+              <div class="collapse-title text-lg font-semibold text-blue-900">¿Cuánto tiempo tarda un proyecto típico?</div>
+              <div class="collapse-content text-gray-600">
+                <p>Depende del alcance, pero la mayoría de nuestros proyectos se entregan en un plazo de 4 a 12 semanas. Realizamos una estimación detallada en la fase inicial sin coste.</p>
+              </div>
+            </div>
+
+            <div class="collapse collapse-arrow bg-white border border-blue-100 rounded-2xl shadow-sm">
+              <input type="checkbox" />
+              <div class="collapse-title text-lg font-semibold text-blue-900">¿Trabajáis con empresas pequeñas o solo grandes corporaciones?</div>
+              <div class="collapse-content text-gray-600">
+                <p>Trabajamos con todo tipo de organizaciones, desde startups en fase inicial hasta grandes empresas. Adaptamos nuestros servicios y precios a cada caso.</p>
+              </div>
+            </div>
+
+            <div class="collapse collapse-arrow bg-white border border-blue-100 rounded-2xl shadow-sm">
+              <input type="checkbox" />
+              <div class="collapse-title text-lg font-semibold text-blue-900">¿Ofrecéis soporte tras la entrega del proyecto?</div>
+              <div class="collapse-content text-gray-600">
+                <p>Sí, ofrecemos planes de mantenimiento y soporte continuo. Nuestro equipo está disponible para resolver incidencias y evolucionar la solución con el tiempo.</p>
+              </div>
+            </div>
+
+            <div class="collapse collapse-arrow bg-white border border-blue-100 rounded-2xl shadow-sm">
+              <input type="checkbox" />
+              <div class="collapse-title text-lg font-semibold text-blue-900">¿Cómo es el proceso para empezar a trabajar juntos?</div>
+              <div class="collapse-content text-gray-600">
+                <p>Muy sencillo: rellena el formulario de contacto, agendamos una reunión inicial gratuita, analizamos tu caso y te enviamos una propuesta en menos de 48 horas.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- EQUIPO -->
+      <section id="equipo" class="py-24 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-8">
+          <h2 class="text-4xl font-extrabold mb-16 text-center text-blue-900">Nuestro Equipo</h2>
+          <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-10">
+            <div class="fade-in relative group bg-white rounded-2xl shadow-xl p-6 text-center transition-transform duration-500 hover:scale-105 hover:shadow-2xl overflow-hidden">
+              <img src="https://via.placeholder.com/150" alt="Simona Georgiana" class="w-32 h-32 mx-auto rounded-full object-cover mb-4 hover:scale-110 hover:brightness-110 transition duration-500">
+              <h3 class="text-xl font-bold">Simona Georgiana</h3>
+              <p class="text-gray-500">Estudiante De DAM</p>
+            </div>
+            <div class="fade-in relative group bg-white rounded-2xl shadow-xl p-6 text-center transition-transform duration-500 hover:scale-105 hover:shadow-2xl overflow-hidden">
+              <img src="https://via.placeholder.com/150" alt="Rodrigo Sánchez" class="w-32 h-32 mx-auto rounded-full object-cover mb-4 hover:scale-110 hover:brightness-110 transition duration-500">
+              <h3 class="text-xl font-bold">Rodrigo Sánchez</h3>
+              <p class="text-gray-500">Estudiante De DAM</p>
+            </div>
+            <div class="fade-in relative group bg-white rounded-2xl shadow-xl p-6 text-center transition-transform duration-500 hover:scale-105 hover:shadow-2xl overflow-hidden">
+              <img src="https://via.placeholder.com/150" alt="Sergio Vega" class="w-32 h-32 mx-auto rounded-full object-cover mb-4 hover:scale-110 hover:brightness-110 transition duration-500">
+              <h3 class="text-xl font-bold">Sergio Vega</h3>
+              <p class="text-gray-500">Estudiante De DAM</p>
+            </div>
+            <div class="fade-in relative group bg-white rounded-2xl shadow-xl p-6 text-center transition-transform duration-500 hover:scale-105 hover:shadow-2xl overflow-hidden">
+              <img src="https://via.placeholder.com/150" alt="Samuel Martínez" class="w-32 h-32 mx-auto rounded-full object-cover mb-4 hover:scale-110 hover:brightness-110 transition duration-500">
+              <h3 class="text-xl font-bold">Samuel Martínez</h3>
+              <p class="text-gray-500">Estudiante De DAM</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACTO -->
+      <section id="contacto" class="bg-blue-900 text-white py-24">
+        <div class="max-w-3xl mx-auto px-8 fade-in">
+          <h2 class="text-4xl font-bold mb-12 text-center">Contacto</h2>
+          <form id="formulario" class="space-y-6">
+            <div class="form-control w-full">
+              <input type="text" placeholder="Nombre" required class="input input-bordered w-full bg-white text-black rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300">
+            </div>
+            <div class="form-control w-full">
+              <input type="email" placeholder="Email" required class="input input-bordered w-full bg-white text-black rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300">
+            </div>
+            <div class="form-control w-full">
+              <textarea rows="5" placeholder="Mensaje" required class="textarea textarea-bordered w-full bg-white text-black rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300"></textarea>
+            </div>
+            <button type="submit" class="btn bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-700 hover:to-blue-900 text-white transition duration-300 rounded-lg shadow-lg hover:shadow-2xl w-full py-4 font-semibold uppercase">
+              Enviar
+            </button>
+            <p id="mensaje-ok" class="hidden text-green-300 font-semibold text-center mt-4">
+              Mensaje enviado correctamente.
+            </p>
+          </form>
+        </div>
+      </section>
+
+      <!-- SCROLL TO TOP -->
+      <a href="#inicio" class="fixed bottom-6 right-6 bg-blue-600 text-white p-4 rounded-full shadow-lg hover:shadow-2xl transition duration-300 hover:scale-110 z-50">
+        <i class="fas fa-arrow-up"></i>
+      </a>
+
+      <!-- FOOTER -->
+      <footer class="bg-gradient-to-t from-black to-gray-900 text-gray-300 py-6">
+        <div class="max-w-7xl mx-auto px-8 flex justify-between">
+          <p>&copy; 2026 NOMBRE. Todos los derechos reservados.</p>
+        </div>
+      </footer>
+
+    </div><!-- fin drawer-content -->
+
+    <!-- ✅ NUEVO: Panel lateral del drawer (menú móvil) -->
+    <div class="drawer-side z-50">
+      <label for="mobile-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
+      <ul class="menu bg-blue-900 text-white min-h-full w-64 p-6 gap-2">
+        <li class="mb-6">
+          <span class="text-xl font-extrabold tracking-wide" style="font-family: 'Syne', sans-serif;">Free Anuel</span>
+        </li>
+        <li><a href="#inicio" class="text-lg font-semibold hover:bg-blue-700 rounded-lg px-4 py-3" onclick="document.getElementById('mobile-drawer').checked=false">Inicio</a></li>
+        <li><a href="#servicios" class="text-lg font-semibold hover:bg-blue-700 rounded-lg px-4 py-3" onclick="document.getElementById('mobile-drawer').checked=false">Servicios</a></li>
+        <li><a href="#equipo" class="text-lg font-semibold hover:bg-blue-700 rounded-lg px-4 py-3" onclick="document.getElementById('mobile-drawer').checked=false">Equipo</a></li>
+        <li><a href="#contacto" class="text-lg font-semibold hover:bg-blue-700 rounded-lg px-4 py-3" onclick="document.getElementById('mobile-drawer').checked=false">Contacto</a></li>
       </ul>
-    </nav>
-  </header>
-
-  <!-- HERO -->
-  <section id="inicio" class="relative h-screen overflow-hidden">
-    <video autoplay muted loop playsinline class="absolute w-full h-full object-cover">
-      <source src="video-corporativo.mp4" type="video/mp4">
-    </video>
-    <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-black/70"></div>
-    <div class="absolute inset-0 pointer-events-none">
-      <div class="w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.03),transparent_70%)] animate-pulse-slow"></div>
     </div>
-    <div class="relative z-10 flex items-center h-full">
-      <div class="max-w-5xl mx-auto px-8 text-white">
-        <div class="inline-flex items-center gap-2 bg-blue-600/30 border border-blue-400/40 backdrop-blur-sm text-blue-200 text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full mb-6 animate-fadeIn">
-          <span class="w-2 h-2 bg-blue-400 rounded-full animate-ping inline-block"></span>
-          Consultoría Tecnológica
-        </div>
-        <h2 class="text-5xl md:text-6xl font-bold leading-tight mb-8 animate-fadeIn">
-          Transformamos el futuro digital
-        </h2>
-        <p class="text-xl max-w-2xl mb-10 text-gray-200 animate-fadeIn delay-200">
-          Estrategia, tecnología e innovación para impulsar organizaciones hacia el siguiente nivel.
-        </p>
-        <a href="#contacto"
-          class="bg-gradient-to-r from-blue-500 to-blue-700 text-white px-8 py-4 font-semibold uppercase tracking-wider rounded-lg shadow-lg hover:shadow-2xl hover:brightness-110 transition duration-300 animate-fadeIn delay-400 hover:scale-105">
-          Descubrir más
-        </a>
-      </div>
-    </div>
-  </section>
 
-  <!-- ESTADÍSTICAS -->
-  <section class="py-16 bg-blue-900">
-    <div class="max-w-5xl mx-auto px-8">
-      <div class="stats stats-vertical lg:stats-horizontal shadow w-full bg-blue-800 text-white rounded-2xl">
-        <div class="stat text-center">
-          <div class="stat-figure text-blue-300"><i class="fas fa-briefcase text-3xl"></i></div>
-          <div class="stat-title text-blue-200">Proyectos completados</div>
-          <div class="stat-value text-white">+120</div>
-          <div class="stat-desc text-blue-300">Desde 2018</div>
-        </div>
-        <div class="stat text-center">
-          <div class="stat-figure text-blue-300"><i class="fas fa-users text-3xl"></i></div>
-          <div class="stat-title text-blue-200">Clientes satisfechos</div>
-          <div class="stat-value text-white">98%</div>
-          <div class="stat-desc text-blue-300">Tasa de satisfacción</div>
-        </div>
-        <div class="stat text-center">
-          <div class="stat-figure text-blue-300"><i class="fas fa-globe text-3xl"></i></div>
-          <div class="stat-title text-blue-200">Países</div>
-          <div class="stat-value text-white">12</div>
-          <div class="stat-desc text-blue-300">Presencia internacional</div>
-        </div>
-        <div class="stat text-center">
-          <div class="stat-figure text-blue-300"><i class="fas fa-code text-3xl"></i></div>
-          <div class="stat-title text-blue-200">Líneas de código</div>
-          <div class="stat-value text-white">2M+</div>
-          <div class="stat-desc text-blue-300">En producción</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SERVICIOS -->
-  <section id="servicios" class="py-24 bg-gray-50">
-    <div class="max-w-7xl mx-auto px-8">
-      <h2 class="text-4xl font-extrabold mb-16 text-center text-blue-900">Nuestros Servicios</h2>
-      <div class="grid md:grid-cols-3 gap-10">
-        <div class="card fade-in bg-white shadow-xl rounded-2xl transition-transform duration-500 hover:shadow-2xl hover:-translate-y-2 hover:scale-105 group relative overflow-hidden hover:bg-gradient-to-r hover:from-blue-50 hover:to-blue-100">
-          <figure class="aspect-video overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&q=80" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-          </figure>
-          <div class="card-body">
-            <h3 class="card-title">Transformación Digital</h3>
-            <p>Modernización de procesos y estrategia tecnológica.</p>
-          </div>
-        </div>
-        <div class="card fade-in bg-white shadow-xl rounded-2xl transition-transform duration-500 hover:shadow-2xl hover:-translate-y-2 hover:scale-105 group relative overflow-hidden hover:bg-gradient-to-r hover:from-blue-50 hover:to-blue-100">
-          <figure class="aspect-video overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=80" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-          </figure>
-          <div class="card-body">
-            <h3 class="card-title">Soluciones Cloud</h3>
-            <p>Infraestructura escalable, segura y eficiente.</p>
-          </div>
-        </div>
-        <div class="card fade-in bg-white shadow-xl rounded-2xl transition-transform duration-500 hover:shadow-2xl hover:-translate-y-2 hover:scale-105 group relative overflow-hidden hover:bg-gradient-to-r hover:from-blue-50 hover:to-blue-100">
-          <figure class="aspect-video overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&q=80" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-          </figure>
-          <div class="card-body">
-            <h3 class="card-title">Desarrollo de Software</h3>
-            <p>Aplicaciones web y sistemas empresariales a medida.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ✅ CARRUSEL CORREGIDO: solo flechas izquierda / derecha -->
-  <section class="py-24 bg-white">
-    <div class="max-w-4xl mx-auto px-8">
-      <h2 class="text-4xl font-extrabold mb-4 text-center text-blue-900">Lo que dicen nuestros clientes</h2>
-      <p class="text-center text-gray-500 mb-12">Testimonios de quienes ya confían en nosotros</p>
-
-      <div class="relative flex items-center gap-4">
-
-        <!-- Flecha izquierda -->
-        <button id="prev-btn" class="btn btn-circle bg-blue-900 text-white border-none hover:bg-blue-700 shadow-md flex-shrink-0">❮</button>
-
-        <!-- Ventana del carrusel -->
-        <div class="overflow-hidden w-full rounded-2xl">
-          <div id="carousel-track" class="flex transition-transform duration-500 ease-in-out">
-
-            <div class="carousel-slide min-w-full">
-              <div class="bg-blue-50 border border-blue-100 rounded-2xl shadow-lg p-10 flex flex-col items-center text-center gap-4">
-                <div class="text-blue-400 text-4xl"><i class="fas fa-quote-left"></i></div>
-                <p class="text-lg text-gray-700 max-w-2xl italic">"Gracias a Free Anuel transformamos completamente nuestra infraestructura en menos de 3 meses. Resultados excepcionales."</p>
-                <div class="flex items-center gap-3 mt-4">
-                  <img src="https://i.pravatar.cc/60?img=11" class="w-12 h-12 rounded-full object-cover shadow" alt="María López">
-                  <div class="text-left">
-                    <p class="font-bold text-blue-900">María López</p>
-                    <p class="text-sm text-gray-500">CTO · Empresa Logística</p>
-                  </div>
-                </div>
-                <div class="flex gap-1 text-yellow-400 text-sm">
-                  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                </div>
-              </div>
-            </div>
-
-            <div class="carousel-slide min-w-full">
-              <div class="bg-blue-50 border border-blue-100 rounded-2xl shadow-lg p-10 flex flex-col items-center text-center gap-4">
-                <div class="text-blue-400 text-4xl"><i class="fas fa-quote-left"></i></div>
-                <p class="text-lg text-gray-700 max-w-2xl italic">"El equipo entiende los retos del negocio y los traduce en soluciones técnicas reales. Totalmente recomendables."</p>
-                <div class="flex items-center gap-3 mt-4">
-                  <img src="https://i.pravatar.cc/60?img=32" class="w-12 h-12 rounded-full object-cover shadow" alt="Carlos Fernández">
-                  <div class="text-left">
-                    <p class="font-bold text-blue-900">Carlos Fernández</p>
-                    <p class="text-sm text-gray-500">CEO · Startup Fintech</p>
-                  </div>
-                </div>
-                <div class="flex gap-1 text-yellow-400 text-sm">
-                  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                </div>
-              </div>
-            </div>
-
-            <div class="carousel-slide min-w-full">
-              <div class="bg-blue-50 border border-blue-100 rounded-2xl shadow-lg p-10 flex flex-col items-center text-center gap-4">
-                <div class="text-blue-400 text-4xl"><i class="fas fa-quote-left"></i></div>
-                <p class="text-lg text-gray-700 max-w-2xl italic">"Implementaron nuestra plataforma cloud con una calidad y velocidad que no esperábamos. Repetiremos sin duda."</p>
-                <div class="flex items-center gap-3 mt-4">
-                  <img src="https://i.pravatar.cc/60?img=47" class="w-12 h-12 rounded-full object-cover shadow" alt="Ana Ruiz">
-                  <div class="text-left">
-                    <p class="font-bold text-blue-900">Ana Ruiz</p>
-                    <p class="text-sm text-gray-500">Directora de Operaciones · Retail</p>
-                  </div>
-                </div>
-                <div class="flex gap-1 text-yellow-400 text-sm">
-                  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-        <!-- Flecha derecha -->
-        <button id="next-btn" class="btn btn-circle bg-blue-900 text-white border-none hover:bg-blue-700 shadow-md flex-shrink-0">❯</button>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ✅ NUEVO: FAQ Accordion DaisyUI -->
-  <section class="py-24 bg-gray-50">
-    <div class="max-w-3xl mx-auto px-8">
-      <h2 class="text-4xl font-extrabold mb-4 text-center text-blue-900">Preguntas Frecuentes</h2>
-      <p class="text-center text-gray-500 mb-12">Todo lo que necesitas saber antes de empezar</p>
-
-      <div class="flex flex-col gap-3">
-
-        <div class="collapse collapse-arrow bg-white border border-blue-100 rounded-2xl shadow-sm">
-          <input type="radio" name="faq" checked="checked" />
-          <div class="collapse-title text-lg font-semibold text-blue-900">
-            ¿Cuánto tiempo tarda un proyecto típico?
-          </div>
-          <div class="collapse-content text-gray-600">
-            <p>Depende del alcance, pero la mayoría de nuestros proyectos se entregan en un plazo de 4 a 12 semanas. Realizamos una estimación detallada en la fase inicial sin coste.</p>
-          </div>
-        </div>
-
-        <div class="collapse collapse-arrow bg-white border border-blue-100 rounded-2xl shadow-sm">
-          <input type="radio" name="faq" />
-          <div class="collapse-title text-lg font-semibold text-blue-900">
-            ¿Trabajáis con empresas pequeñas o solo grandes corporaciones?
-          </div>
-          <div class="collapse-content text-gray-600">
-            <p>Trabajamos con todo tipo de organizaciones, desde startups en fase inicial hasta grandes empresas. Adaptamos nuestros servicios y precios a cada caso.</p>
-          </div>
-        </div>
-
-        <div class="collapse collapse-arrow bg-white border border-blue-100 rounded-2xl shadow-sm">
-          <input type="radio" name="faq" />
-          <div class="collapse-title text-lg font-semibold text-blue-900">
-            ¿Ofrecéis soporte tras la entrega del proyecto?
-          </div>
-          <div class="collapse-content text-gray-600">
-            <p>Sí, ofrecemos planes de mantenimiento y soporte continuo. Nuestro equipo está disponible para resolver incidencias y evolucionar la solución con el tiempo.</p>
-          </div>
-        </div>
-
-        <div class="collapse collapse-arrow bg-white border border-blue-100 rounded-2xl shadow-sm">
-          <input type="radio" name="faq" />
-          <div class="collapse-title text-lg font-semibold text-blue-900">
-            ¿Cómo es el proceso para empezar a trabajar juntos?
-          </div>
-          <div class="collapse-content text-gray-600">
-            <p>Muy sencillo: rellena el formulario de contacto, agendamos una reunión inicial gratuita, analizamos tu caso y te enviamos una propuesta en menos de 48 horas.</p>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- EQUIPO -->
-  <section id="equipo" class="py-24 bg-gray-100">
-    <div class="max-w-7xl mx-auto px-8">
-      <h2 class="text-4xl font-extrabold mb-16 text-center text-blue-900">Nuestro Equipo</h2>
-      <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-10">
-        <div class="fade-in relative group bg-white rounded-2xl shadow-xl p-6 text-center transition-transform duration-500 hover:scale-105 hover:shadow-2xl overflow-hidden">
-          <img src="https://via.placeholder.com/150" alt="Simona Georgiana" class="w-32 h-32 mx-auto rounded-full object-cover mb-4 hover:scale-110 hover:brightness-110 transition duration-500">
-          <h3 class="text-xl font-bold">Simona Georgiana</h3>
-          <p class="text-gray-500">Estudiante De DAM</p>
-        </div>
-        <div class="fade-in relative group bg-white rounded-2xl shadow-xl p-6 text-center transition-transform duration-500 hover:scale-105 hover:shadow-2xl overflow-hidden">
-          <img src="https://via.placeholder.com/150" alt="Rodrigo Sánchez" class="w-32 h-32 mx-auto rounded-full object-cover mb-4 hover:scale-110 hover:brightness-110 transition duration-500">
-          <h3 class="text-xl font-bold">Rodrigo Sánchez</h3>
-          <p class="text-gray-500">Estudiante De DAM</p>
-        </div>
-        <div class="fade-in relative group bg-white rounded-2xl shadow-xl p-6 text-center transition-transform duration-500 hover:scale-105 hover:shadow-2xl overflow-hidden">
-          <img src="https://via.placeholder.com/150" alt="Sergio Vega" class="w-32 h-32 mx-auto rounded-full object-cover mb-4 hover:scale-110 hover:brightness-110 transition duration-500">
-          <h3 class="text-xl font-bold">Sergio Vega</h3>
-          <p class="text-gray-500">Estudiante De DAM</p>
-        </div>
-        <div class="fade-in relative group bg-white rounded-2xl shadow-xl p-6 text-center transition-transform duration-500 hover:scale-105 hover:shadow-2xl overflow-hidden">
-          <img src="https://via.placeholder.com/150" alt="Samuel Martínez" class="w-32 h-32 mx-auto rounded-full object-cover mb-4 hover:scale-110 hover:brightness-110 transition duration-500">
-          <h3 class="text-xl font-bold">Samuel Martínez</h3>
-          <p class="text-gray-500">Estudiante De DAM</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACTO -->
-  <section id="contacto" class="bg-blue-900 text-white py-24">
-    <div class="max-w-3xl mx-auto px-8 fade-in">
-      <h2 class="text-4xl font-bold mb-12 text-center">Contacto</h2>
-      <form id="formulario" class="space-y-6">
-        <div class="form-control w-full">
-          <input type="text" placeholder="Nombre" required class="input input-bordered w-full bg-white text-black rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300">
-        </div>
-        <div class="form-control w-full">
-          <input type="email" placeholder="Email" required class="input input-bordered w-full bg-white text-black rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300">
-        </div>
-        <div class="form-control w-full">
-          <textarea rows="5" placeholder="Mensaje" required class="textarea textarea-bordered w-full bg-white text-black rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300"></textarea>
-        </div>
-        <button type="submit" class="btn bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-700 hover:to-blue-900 text-white transition duration-300 rounded-lg shadow-lg hover:shadow-2xl w-full py-4 font-semibold uppercase">
-          Enviar
-        </button>
-        <p id="mensaje-ok" class="hidden text-green-300 font-semibold text-center mt-4">
-          Mensaje enviado correctamente.
-        </p>
-      </form>
-    </div>
-  </section>
-
-  <!-- SCROLL TO TOP -->
-  <a href="#inicio" class="fixed bottom-6 right-6 bg-blue-600 text-white p-4 rounded-full shadow-lg hover:shadow-2xl transition duration-300 hover:scale-110">
-    <i class="fas fa-arrow-up"></i>
-  </a>
-
-  <!-- FOOTER -->
-  <footer class="bg-gradient-to-t from-black to-gray-900 text-gray-300 py-6">
-    <div class="max-w-7xl mx-auto px-8 flex justify-between">
-      <p>&copy; 2026 NOMBRE. Todos los derechos reservados.</p>
-    </div>
-  </footer>
+  </div><!-- fin drawer -->
 
   <style>
     @keyframes fadeIn { from { opacity: 0; transform: translateY(20px) scale(0.95); } to { opacity: 1; transform: translateY(0) scale(1); } }
@@ -337,12 +333,10 @@
     const track = document.getElementById("carousel-track");
     const slides = document.querySelectorAll(".carousel-slide");
     let current = 0;
-
     function goTo(index) {
       current = (index + slides.length) % slides.length;
       track.style.transform = `translateX(-${current * 100}%)`;
     }
-
     document.getElementById("prev-btn").addEventListener("click", () => goTo(current - 1));
     document.getElementById("next-btn").addEventListener("click", () => goTo(current + 1));
 
@@ -350,10 +344,7 @@
     const faders = document.querySelectorAll('.fade-in');
     const appearOnScroll = new IntersectionObserver(function(entries, observer){
       entries.forEach(entry => {
-        if(entry.isIntersecting){
-          entry.target.classList.add('show');
-          observer.unobserve(entry.target);
-        }
+        if(entry.isIntersecting){ entry.target.classList.add('show'); observer.unobserve(entry.target); }
       });
     }, { threshold: 0.1 });
     faders.forEach(fader => appearOnScroll.observe(fader));
