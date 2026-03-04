@@ -7,7 +7,6 @@
   <title>NOMBRE</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
-  <!-- ✅ AÑADIDO: Google Fonts - Tipografía Syne + Inter -->
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
@@ -17,8 +16,7 @@
   <!-- HEADER -->
   <header class="border-b bg-white/80 backdrop-blur-md sticky top-0 z-50 shadow-sm">
     <nav class="max-w-7xl mx-auto flex justify-between items-center px-8 py-5">
-      <!-- ✅ AÑADIDO: fuente Syne al logo -->
-      <h1 class="text-2xl font-extrabold tracking-wide text-blue-900" style="font-family: 'Syne', sans-serif;">NOMBRE</h1>
+      <h1 class="text-2xl font-extrabold tracking-wide text-blue-900" style="font-family: 'Syne', sans-serif;">Free Anuel</h1>
       <ul class="hidden md:flex space-x-10 text-sm font-semibold uppercase tracking-wider">
         <li><a href="#inicio" class="hover:text-blue-700 transition">Inicio</a></li>
         <li><a href="#servicios" class="hover:text-blue-700 transition">Servicios</a></li>
@@ -35,7 +33,6 @@
     </video>
     <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-black/70"></div>
 
-    <!-- Overlay partículas -->
     <div class="absolute inset-0 pointer-events-none">
       <div class="w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.03),transparent_70%)] animate-pulse-slow"></div>
     </div>
@@ -43,7 +40,6 @@
     <div class="relative z-10 flex items-center h-full">
       <div class="max-w-5xl mx-auto px-8 text-white">
 
-        <!-- ✅ AÑADIDO: Badge animado con ping -->
         <div class="inline-flex items-center gap-2 bg-blue-600/30 border border-blue-400/40 backdrop-blur-sm text-blue-200 text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full mb-6 animate-fadeIn">
           <span class="w-2 h-2 bg-blue-400 rounded-full animate-ping inline-block"></span>
           Consultoría Tecnológica
@@ -63,7 +59,7 @@
     </div>
   </section>
 
-  <!-- ✅ AÑADIDO: Sección estadísticas DaisyUI stats -->
+  <!-- ESTADÍSTICAS -->
   <section class="py-16 bg-blue-900">
     <div class="max-w-5xl mx-auto px-8">
       <div class="stats stats-vertical lg:stats-horizontal shadow w-full bg-blue-800 text-white rounded-2xl">
@@ -108,8 +104,7 @@
     <div class="max-w-7xl mx-auto px-8">
       <h2 class="text-4xl font-extrabold mb-16 text-center text-blue-900">Nuestros Servicios</h2>
       <div class="grid md:grid-cols-3 gap-10">
-        <div
-          class="card fade-in bg-white shadow-xl rounded-2xl transition-transform duration-500 hover:shadow-2xl hover:-translate-y-2 hover:scale-105 group relative overflow-hidden hover:bg-gradient-to-r hover:from-blue-50 hover:to-blue-100">
+        <div class="card fade-in bg-white shadow-xl rounded-2xl transition-transform duration-500 hover:shadow-2xl hover:-translate-y-2 hover:scale-105 group relative overflow-hidden hover:bg-gradient-to-r hover:from-blue-50 hover:to-blue-100">
           <figure class="aspect-video overflow-hidden">
             <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&q=80"
               class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
@@ -120,8 +115,7 @@
           </div>
         </div>
 
-        <div
-          class="card fade-in bg-white shadow-xl rounded-2xl transition-transform duration-500 hover:shadow-2xl hover:-translate-y-2 hover:scale-105 group relative overflow-hidden hover:bg-gradient-to-r hover:from-blue-50 hover:to-blue-100">
+        <div class="card fade-in bg-white shadow-xl rounded-2xl transition-transform duration-500 hover:shadow-2xl hover:-translate-y-2 hover:scale-105 group relative overflow-hidden hover:bg-gradient-to-r hover:from-blue-50 hover:to-blue-100">
           <figure class="aspect-video overflow-hidden">
             <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=80"
               class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
@@ -132,8 +126,7 @@
           </div>
         </div>
 
-        <div
-          class="card fade-in bg-white shadow-xl rounded-2xl transition-transform duration-500 hover:shadow-2xl hover:-translate-y-2 hover:scale-105 group relative overflow-hidden hover:bg-gradient-to-r hover:from-blue-50 hover:to-blue-100">
+        <div class="card fade-in bg-white shadow-xl rounded-2xl transition-transform duration-500 hover:shadow-2xl hover:-translate-y-2 hover:scale-105 group relative overflow-hidden hover:bg-gradient-to-r hover:from-blue-50 hover:to-blue-100">
           <figure class="aspect-video overflow-hidden">
             <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&q=80"
               class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
@@ -147,7 +140,95 @@
     </div>
   </section>
 
-  <!-- EQUIPO (restaurado y con hover zoom brillante) -->
+  <!-- ✅ NUEVO: CARRUSEL DE TESTIMONIOS -->
+  <section class="py-24 bg-white">
+    <div class="max-w-5xl mx-auto px-8">
+      <h2 class="text-4xl font-extrabold mb-4 text-center text-blue-900">Lo que dicen nuestros clientes</h2>
+      <p class="text-center text-gray-500 mb-12">Testimonios de quienes ya confían en nosotros</p>
+
+      <!-- Carrusel DaisyUI -->
+      <div class="relative">
+        <div class="carousel w-full gap-6 rounded-2xl" id="testimonials-carousel">
+
+          <!-- Slide 1 -->
+          <div id="slide1" class="carousel-item w-full">
+            <div class="bg-blue-50 border border-blue-100 rounded-2xl shadow-lg p-10 w-full flex flex-col items-center text-center gap-4">
+              <div class="text-blue-400 text-4xl mb-2">
+                <i class="fas fa-quote-left"></i>
+              </div>
+              <p class="text-lg text-gray-700 max-w-2xl italic">
+                "Gracias a Free Anuel transformamos completamente nuestra infraestructura en menos de 3 meses. Resultados excepcionales."
+              </p>
+              <div class="flex items-center gap-3 mt-4">
+                <img src="https://i.pravatar.cc/60?img=11" class="w-12 h-12 rounded-full object-cover shadow" alt="Cliente 1">
+                <div class="text-left">
+                  <p class="font-bold text-blue-900">María López</p>
+                  <p class="text-sm text-gray-500">CTO · Empresa Logística</p>
+                </div>
+              </div>
+              <div class="flex gap-1 text-yellow-400 text-sm mt-1">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div id="slide2" class="carousel-item w-full">
+            <div class="bg-blue-50 border border-blue-100 rounded-2xl shadow-lg p-10 w-full flex flex-col items-center text-center gap-4">
+              <div class="text-blue-400 text-4xl mb-2">
+                <i class="fas fa-quote-left"></i>
+              </div>
+              <p class="text-lg text-gray-700 max-w-2xl italic">
+                "El equipo entiende los retos del negocio y los traduce en soluciones técnicas reales. Totalmente recomendables."
+              </p>
+              <div class="flex items-center gap-3 mt-4">
+                <img src="https://i.pravatar.cc/60?img=32" class="w-12 h-12 rounded-full object-cover shadow" alt="Cliente 2">
+                <div class="text-left">
+                  <p class="font-bold text-blue-900">Carlos Fernández</p>
+                  <p class="text-sm text-gray-500">CEO · Startup Fintech</p>
+                </div>
+              </div>
+              <div class="flex gap-1 text-yellow-400 text-sm mt-1">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 3 -->
+          <div id="slide3" class="carousel-item w-full">
+            <div class="bg-blue-50 border border-blue-100 rounded-2xl shadow-lg p-10 w-full flex flex-col items-center text-center gap-4">
+              <div class="text-blue-400 text-4xl mb-2">
+                <i class="fas fa-quote-left"></i>
+              </div>
+              <p class="text-lg text-gray-700 max-w-2xl italic">
+                "Implementaron nuestra plataforma cloud con una calidad y velocidad que no esperábamos. Repetiremos sin duda."
+              </p>
+              <div class="flex items-center gap-3 mt-4">
+                <img src="https://i.pravatar.cc/60?img=47" class="w-12 h-12 rounded-full object-cover shadow" alt="Cliente 3">
+                <div class="text-left">
+                  <p class="font-bold text-blue-900">Ana Ruiz</p>
+                  <p class="text-sm text-gray-500">Directora de Operaciones · Retail</p>
+                </div>
+              </div>
+              <div class="flex gap-1 text-yellow-400 text-sm mt-1">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Flechas de navegación -->
+        <div class="flex justify-center gap-4 mt-8">
+          <a href="#slide1" class="btn btn-circle bg-blue-900 text-white border-none hover:bg-blue-700 shadow-md">❮</a>
+          <a href="#slide2" class="btn btn-circle bg-blue-900 text-white border-none hover:bg-blue-700 shadow-md">2</a>
+          <a href="#slide3" class="btn btn-circle bg-blue-900 text-white border-none hover:bg-blue-700 shadow-md">❯</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EQUIPO -->
   <section id="equipo" class="py-24 bg-gray-100">
     <div class="max-w-7xl mx-auto px-8">
       <h2 class="text-4xl font-extrabold mb-16 text-center text-blue-900">Nuestro Equipo</h2>
@@ -180,7 +261,7 @@
     </div>
   </section>
 
-  <!-- CONTACTO (con gradiente de botón y hover pulse) -->
+  <!-- CONTACTO -->
   <section id="contacto" class="bg-blue-900 text-white py-24">
     <div class="max-w-3xl mx-auto px-8 fade-in">
       <h2 class="text-4xl font-bold mb-12 text-center">Contacto</h2>
