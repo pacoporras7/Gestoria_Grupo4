@@ -102,38 +102,75 @@
         </div>
       </section>
 
-      <!-- SERVICIOS -->
+      <!-- ✅ SERVICIOS con Badges -->
       <section id="servicios" class="py-24 bg-gray-50">
         <div class="max-w-7xl mx-auto px-8">
           <h2 class="text-4xl font-extrabold mb-16 text-center text-blue-900">Nuestros Servicios</h2>
           <div class="grid md:grid-cols-3 gap-10">
+
+            <!-- Card 1 — Badge "Popular" -->
             <div class="card fade-in bg-white shadow-xl rounded-2xl transition-transform duration-500 hover:shadow-2xl hover:-translate-y-2 hover:scale-105 group relative overflow-hidden hover:bg-gradient-to-r hover:from-blue-50 hover:to-blue-100">
+              <!-- ✅ Badge posicionado sobre la imagen -->
+              <div class="absolute top-3 left-3 z-10">
+                <span class="badge badge-warning gap-1 font-bold shadow-md px-3 py-3 text-xs uppercase tracking-wide">
+                  <i class="fas fa-fire text-xs"></i> Popular
+                </span>
+              </div>
               <figure class="aspect-video overflow-hidden">
                 <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&q=80" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
               </figure>
               <div class="card-body">
-                <h3 class="card-title">Transformación Digital</h3>
+                <div class="flex items-start justify-between">
+                  <h3 class="card-title">Transformación Digital</h3>
+                </div>
                 <p>Modernización de procesos y estrategia tecnológica.</p>
+                <div class="card-actions mt-2">
+                  <span class="badge badge-outline badge-primary text-xs">Estrategia</span>
+                  <span class="badge badge-outline badge-primary text-xs">Consultoría</span>
+                </div>
               </div>
             </div>
+
+            <!-- Card 2 — Badge "Nuevo" -->
             <div class="card fade-in bg-white shadow-xl rounded-2xl transition-transform duration-500 hover:shadow-2xl hover:-translate-y-2 hover:scale-105 group relative overflow-hidden hover:bg-gradient-to-r hover:from-blue-50 hover:to-blue-100">
+              <div class="absolute top-3 left-3 z-10">
+                <span class="badge badge-success gap-1 font-bold shadow-md px-3 py-3 text-xs uppercase tracking-wide text-white">
+                  <i class="fas fa-star text-xs"></i> Nuevo
+                </span>
+              </div>
               <figure class="aspect-video overflow-hidden">
                 <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=80" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
               </figure>
               <div class="card-body">
                 <h3 class="card-title">Soluciones Cloud</h3>
                 <p>Infraestructura escalable, segura y eficiente.</p>
+                <div class="card-actions mt-2">
+                  <span class="badge badge-outline badge-success text-xs">Cloud</span>
+                  <span class="badge badge-outline badge-success text-xs">Infraestructura</span>
+                </div>
               </div>
             </div>
+
+            <!-- Card 3 — Badge "Destacado" -->
             <div class="card fade-in bg-white shadow-xl rounded-2xl transition-transform duration-500 hover:shadow-2xl hover:-translate-y-2 hover:scale-105 group relative overflow-hidden hover:bg-gradient-to-r hover:from-blue-50 hover:to-blue-100">
+              <div class="absolute top-3 left-3 z-10">
+                <span class="badge badge-info gap-1 font-bold shadow-md px-3 py-3 text-xs uppercase tracking-wide text-white">
+                  <i class="fas fa-bolt text-xs"></i> Destacado
+                </span>
+              </div>
               <figure class="aspect-video overflow-hidden">
                 <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&q=80" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
               </figure>
               <div class="card-body">
                 <h3 class="card-title">Desarrollo de Software</h3>
                 <p>Aplicaciones web y sistemas empresariales a medida.</p>
+                <div class="card-actions mt-2">
+                  <span class="badge badge-outline badge-info text-xs">Web</span>
+                  <span class="badge badge-outline badge-info text-xs">A medida</span>
+                </div>
               </div>
             </div>
+
           </div>
         </div>
       </section>
@@ -217,96 +254,51 @@
         </div>
       </section>
 
-      <!-- ✅ EQUIPO — con progress bars animadas -->
+      <!-- EQUIPO con progress bars -->
       <section id="equipo" class="py-24 bg-gray-100">
         <div class="max-w-7xl mx-auto px-8">
           <h2 class="text-4xl font-extrabold mb-16 text-center text-blue-900">Nuestro Equipo</h2>
           <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-10">
-
-            <!-- Simona -->
             <div class="fade-in bg-white rounded-2xl shadow-xl p-6 text-center transition-transform duration-500 hover:scale-105 hover:shadow-2xl overflow-hidden">
               <img src="https://via.placeholder.com/150" alt="Simona Georgiana" class="w-32 h-32 mx-auto rounded-full object-cover mb-4 transition duration-500">
               <h3 class="text-xl font-bold mb-1">Simona Georgiana</h3>
               <p class="text-gray-500 text-sm mb-5">Estudiante De DAM</p>
               <div class="text-left space-y-3">
-                <div>
-                  <div class="flex justify-between text-xs text-gray-500 mb-1"><span>Frontend</span><span>90%</span></div>
-                  <progress class="progress progress-info w-full" value="90" max="100"></progress>
-                </div>
-                <div>
-                  <div class="flex justify-between text-xs text-gray-500 mb-1"><span>UX/UI</span><span>80%</span></div>
-                  <progress class="progress progress-info w-full" value="80" max="100"></progress>
-                </div>
-                <div>
-                  <div class="flex justify-between text-xs text-gray-500 mb-1"><span>Java</span><span>70%</span></div>
-                  <progress class="progress progress-info w-full" value="70" max="100"></progress>
-                </div>
+                <div><div class="flex justify-between text-xs text-gray-500 mb-1"><span>Frontend</span><span>90%</span></div><progress class="progress progress-info w-full" value="90" max="100"></progress></div>
+                <div><div class="flex justify-between text-xs text-gray-500 mb-1"><span>UX/UI</span><span>80%</span></div><progress class="progress progress-info w-full" value="80" max="100"></progress></div>
+                <div><div class="flex justify-between text-xs text-gray-500 mb-1"><span>Java</span><span>70%</span></div><progress class="progress progress-info w-full" value="70" max="100"></progress></div>
               </div>
             </div>
-
-            <!-- Rodrigo -->
             <div class="fade-in bg-white rounded-2xl shadow-xl p-6 text-center transition-transform duration-500 hover:scale-105 hover:shadow-2xl overflow-hidden">
               <img src="https://via.placeholder.com/150" alt="Rodrigo Sánchez" class="w-32 h-32 mx-auto rounded-full object-cover mb-4 transition duration-500">
               <h3 class="text-xl font-bold mb-1">Rodrigo Sánchez</h3>
               <p class="text-gray-500 text-sm mb-5">Estudiante De DAM</p>
               <div class="text-left space-y-3">
-                <div>
-                  <div class="flex justify-between text-xs text-gray-500 mb-1"><span>Backend</span><span>85%</span></div>
-                  <progress class="progress progress-success w-full" value="85" max="100"></progress>
-                </div>
-                <div>
-                  <div class="flex justify-between text-xs text-gray-500 mb-1"><span>SQL</span><span>75%</span></div>
-                  <progress class="progress progress-success w-full" value="75" max="100"></progress>
-                </div>
-                <div>
-                  <div class="flex justify-between text-xs text-gray-500 mb-1"><span>APIs REST</span><span>80%</span></div>
-                  <progress class="progress progress-success w-full" value="80" max="100"></progress>
-                </div>
+                <div><div class="flex justify-between text-xs text-gray-500 mb-1"><span>Backend</span><span>85%</span></div><progress class="progress progress-success w-full" value="85" max="100"></progress></div>
+                <div><div class="flex justify-between text-xs text-gray-500 mb-1"><span>SQL</span><span>75%</span></div><progress class="progress progress-success w-full" value="75" max="100"></progress></div>
+                <div><div class="flex justify-between text-xs text-gray-500 mb-1"><span>APIs REST</span><span>80%</span></div><progress class="progress progress-success w-full" value="80" max="100"></progress></div>
               </div>
             </div>
-
-            <!-- Sergio -->
             <div class="fade-in bg-white rounded-2xl shadow-xl p-6 text-center transition-transform duration-500 hover:scale-105 hover:shadow-2xl overflow-hidden">
               <img src="https://via.placeholder.com/150" alt="Sergio Vega" class="w-32 h-32 mx-auto rounded-full object-cover mb-4 transition duration-500">
               <h3 class="text-xl font-bold mb-1">Sergio Vega</h3>
               <p class="text-gray-500 text-sm mb-5">Estudiante De DAM</p>
               <div class="text-left space-y-3">
-                <div>
-                  <div class="flex justify-between text-xs text-gray-500 mb-1"><span>Cloud</span><span>88%</span></div>
-                  <progress class="progress progress-warning w-full" value="88" max="100"></progress>
-                </div>
-                <div>
-                  <div class="flex justify-between text-xs text-gray-500 mb-1"><span>DevOps</span><span>72%</span></div>
-                  <progress class="progress progress-warning w-full" value="72" max="100"></progress>
-                </div>
-                <div>
-                  <div class="flex justify-between text-xs text-gray-500 mb-1"><span>Docker</span><span>78%</span></div>
-                  <progress class="progress progress-warning w-full" value="78" max="100"></progress>
-                </div>
+                <div><div class="flex justify-between text-xs text-gray-500 mb-1"><span>Cloud</span><span>88%</span></div><progress class="progress progress-warning w-full" value="88" max="100"></progress></div>
+                <div><div class="flex justify-between text-xs text-gray-500 mb-1"><span>DevOps</span><span>72%</span></div><progress class="progress progress-warning w-full" value="72" max="100"></progress></div>
+                <div><div class="flex justify-between text-xs text-gray-500 mb-1"><span>Docker</span><span>78%</span></div><progress class="progress progress-warning w-full" value="78" max="100"></progress></div>
               </div>
             </div>
-
-            <!-- Samuel -->
             <div class="fade-in bg-white rounded-2xl shadow-xl p-6 text-center transition-transform duration-500 hover:scale-105 hover:shadow-2xl overflow-hidden">
               <img src="https://via.placeholder.com/150" alt="Samuel Martínez" class="w-32 h-32 mx-auto rounded-full object-cover mb-4 transition duration-500">
               <h3 class="text-xl font-bold mb-1">Samuel Martínez</h3>
               <p class="text-gray-500 text-sm mb-5">Estudiante De DAM</p>
               <div class="text-left space-y-3">
-                <div>
-                  <div class="flex justify-between text-xs text-gray-500 mb-1"><span>Android</span><span>92%</span></div>
-                  <progress class="progress progress-error w-full" value="92" max="100"></progress>
-                </div>
-                <div>
-                  <div class="flex justify-between text-xs text-gray-500 mb-1"><span>Kotlin</span><span>85%</span></div>
-                  <progress class="progress progress-error w-full" value="85" max="100"></progress>
-                </div>
-                <div>
-                  <div class="flex justify-between text-xs text-gray-500 mb-1"><span>Firebase</span><span>76%</span></div>
-                  <progress class="progress progress-error w-full" value="76" max="100"></progress>
-                </div>
+                <div><div class="flex justify-between text-xs text-gray-500 mb-1"><span>Android</span><span>92%</span></div><progress class="progress progress-error w-full" value="92" max="100"></progress></div>
+                <div><div class="flex justify-between text-xs text-gray-500 mb-1"><span>Kotlin</span><span>85%</span></div><progress class="progress progress-error w-full" value="85" max="100"></progress></div>
+                <div><div class="flex justify-between text-xs text-gray-500 mb-1"><span>Firebase</span><span>76%</span></div><progress class="progress progress-error w-full" value="76" max="100"></progress></div>
               </div>
             </div>
-
           </div>
         </div>
       </section>
@@ -373,11 +365,6 @@
     @keyframes toastOut { from { opacity: 1; transform: translateY(0); } to { opacity: 0; transform: translateY(20px); } }
     .toast-show { animation: toastIn 0.4s ease-out forwards; }
     .toast-hide { animation: toastOut 0.4s ease-in forwards; }
-
-    /* ✅ Progress bars: arrancan en 0 y se animan al valor real cuando son visibles */
-    .progress-animate {
-      transition: value 1.2s ease-out;
-    }
   </style>
 
   <script>
@@ -406,7 +393,7 @@
     document.getElementById("prev-btn").addEventListener("click", () => goTo(current - 1));
     document.getElementById("next-btn").addEventListener("click", () => goTo(current + 1));
 
-    // ✅ Progress bars: se animan cuando entran en pantalla
+    // Progress bars animadas
     const progressBars = document.querySelectorAll('progress');
     progressBars.forEach(bar => {
       const realValue = bar.value;
