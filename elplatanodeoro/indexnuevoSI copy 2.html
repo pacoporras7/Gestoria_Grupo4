@@ -13,7 +13,7 @@
 
 <body class="bg-white text-gray-900 font-sans scroll-smooth relative" style="font-family: 'Inter', sans-serif;">
 
-  <!-- ✅ NUEVO: TOAST — aparece al enviar el formulario -->
+  <!-- TOAST -->
   <div id="toast-container" class="toast toast-end toast-bottom z-[9999] hidden">
     <div class="alert bg-green-600 text-white shadow-xl rounded-2xl flex items-center gap-3 px-6 py-4">
       <i class="fas fa-check-circle text-2xl"></i>
@@ -217,31 +217,96 @@
         </div>
       </section>
 
-      <!-- EQUIPO -->
+      <!-- ✅ EQUIPO — con progress bars animadas -->
       <section id="equipo" class="py-24 bg-gray-100">
         <div class="max-w-7xl mx-auto px-8">
           <h2 class="text-4xl font-extrabold mb-16 text-center text-blue-900">Nuestro Equipo</h2>
           <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-10">
-            <div class="fade-in relative group bg-white rounded-2xl shadow-xl p-6 text-center transition-transform duration-500 hover:scale-105 hover:shadow-2xl overflow-hidden">
-              <img src="https://via.placeholder.com/150" alt="Simona Georgiana" class="w-32 h-32 mx-auto rounded-full object-cover mb-4 hover:scale-110 hover:brightness-110 transition duration-500">
-              <h3 class="text-xl font-bold">Simona Georgiana</h3>
-              <p class="text-gray-500">Estudiante De DAM</p>
+
+            <!-- Simona -->
+            <div class="fade-in bg-white rounded-2xl shadow-xl p-6 text-center transition-transform duration-500 hover:scale-105 hover:shadow-2xl overflow-hidden">
+              <img src="https://via.placeholder.com/150" alt="Simona Georgiana" class="w-32 h-32 mx-auto rounded-full object-cover mb-4 transition duration-500">
+              <h3 class="text-xl font-bold mb-1">Simona Georgiana</h3>
+              <p class="text-gray-500 text-sm mb-5">Estudiante De DAM</p>
+              <div class="text-left space-y-3">
+                <div>
+                  <div class="flex justify-between text-xs text-gray-500 mb-1"><span>Frontend</span><span>90%</span></div>
+                  <progress class="progress progress-info w-full" value="90" max="100"></progress>
+                </div>
+                <div>
+                  <div class="flex justify-between text-xs text-gray-500 mb-1"><span>UX/UI</span><span>80%</span></div>
+                  <progress class="progress progress-info w-full" value="80" max="100"></progress>
+                </div>
+                <div>
+                  <div class="flex justify-between text-xs text-gray-500 mb-1"><span>Java</span><span>70%</span></div>
+                  <progress class="progress progress-info w-full" value="70" max="100"></progress>
+                </div>
+              </div>
             </div>
-            <div class="fade-in relative group bg-white rounded-2xl shadow-xl p-6 text-center transition-transform duration-500 hover:scale-105 hover:shadow-2xl overflow-hidden">
-              <img src="https://via.placeholder.com/150" alt="Rodrigo Sánchez" class="w-32 h-32 mx-auto rounded-full object-cover mb-4 hover:scale-110 hover:brightness-110 transition duration-500">
-              <h3 class="text-xl font-bold">Rodrigo Sánchez</h3>
-              <p class="text-gray-500">Estudiante De DAM</p>
+
+            <!-- Rodrigo -->
+            <div class="fade-in bg-white rounded-2xl shadow-xl p-6 text-center transition-transform duration-500 hover:scale-105 hover:shadow-2xl overflow-hidden">
+              <img src="https://via.placeholder.com/150" alt="Rodrigo Sánchez" class="w-32 h-32 mx-auto rounded-full object-cover mb-4 transition duration-500">
+              <h3 class="text-xl font-bold mb-1">Rodrigo Sánchez</h3>
+              <p class="text-gray-500 text-sm mb-5">Estudiante De DAM</p>
+              <div class="text-left space-y-3">
+                <div>
+                  <div class="flex justify-between text-xs text-gray-500 mb-1"><span>Backend</span><span>85%</span></div>
+                  <progress class="progress progress-success w-full" value="85" max="100"></progress>
+                </div>
+                <div>
+                  <div class="flex justify-between text-xs text-gray-500 mb-1"><span>SQL</span><span>75%</span></div>
+                  <progress class="progress progress-success w-full" value="75" max="100"></progress>
+                </div>
+                <div>
+                  <div class="flex justify-between text-xs text-gray-500 mb-1"><span>APIs REST</span><span>80%</span></div>
+                  <progress class="progress progress-success w-full" value="80" max="100"></progress>
+                </div>
+              </div>
             </div>
-            <div class="fade-in relative group bg-white rounded-2xl shadow-xl p-6 text-center transition-transform duration-500 hover:scale-105 hover:shadow-2xl overflow-hidden">
-              <img src="https://via.placeholder.com/150" alt="Sergio Vega" class="w-32 h-32 mx-auto rounded-full object-cover mb-4 hover:scale-110 hover:brightness-110 transition duration-500">
-              <h3 class="text-xl font-bold">Sergio Vega</h3>
-              <p class="text-gray-500">Estudiante De DAM</p>
+
+            <!-- Sergio -->
+            <div class="fade-in bg-white rounded-2xl shadow-xl p-6 text-center transition-transform duration-500 hover:scale-105 hover:shadow-2xl overflow-hidden">
+              <img src="https://via.placeholder.com/150" alt="Sergio Vega" class="w-32 h-32 mx-auto rounded-full object-cover mb-4 transition duration-500">
+              <h3 class="text-xl font-bold mb-1">Sergio Vega</h3>
+              <p class="text-gray-500 text-sm mb-5">Estudiante De DAM</p>
+              <div class="text-left space-y-3">
+                <div>
+                  <div class="flex justify-between text-xs text-gray-500 mb-1"><span>Cloud</span><span>88%</span></div>
+                  <progress class="progress progress-warning w-full" value="88" max="100"></progress>
+                </div>
+                <div>
+                  <div class="flex justify-between text-xs text-gray-500 mb-1"><span>DevOps</span><span>72%</span></div>
+                  <progress class="progress progress-warning w-full" value="72" max="100"></progress>
+                </div>
+                <div>
+                  <div class="flex justify-between text-xs text-gray-500 mb-1"><span>Docker</span><span>78%</span></div>
+                  <progress class="progress progress-warning w-full" value="78" max="100"></progress>
+                </div>
+              </div>
             </div>
-            <div class="fade-in relative group bg-white rounded-2xl shadow-xl p-6 text-center transition-transform duration-500 hover:scale-105 hover:shadow-2xl overflow-hidden">
-              <img src="https://via.placeholder.com/150" alt="Samuel Martínez" class="w-32 h-32 mx-auto rounded-full object-cover mb-4 hover:scale-110 hover:brightness-110 transition duration-500">
-              <h3 class="text-xl font-bold">Samuel Martínez</h3>
-              <p class="text-gray-500">Estudiante De DAM</p>
+
+            <!-- Samuel -->
+            <div class="fade-in bg-white rounded-2xl shadow-xl p-6 text-center transition-transform duration-500 hover:scale-105 hover:shadow-2xl overflow-hidden">
+              <img src="https://via.placeholder.com/150" alt="Samuel Martínez" class="w-32 h-32 mx-auto rounded-full object-cover mb-4 transition duration-500">
+              <h3 class="text-xl font-bold mb-1">Samuel Martínez</h3>
+              <p class="text-gray-500 text-sm mb-5">Estudiante De DAM</p>
+              <div class="text-left space-y-3">
+                <div>
+                  <div class="flex justify-between text-xs text-gray-500 mb-1"><span>Android</span><span>92%</span></div>
+                  <progress class="progress progress-error w-full" value="92" max="100"></progress>
+                </div>
+                <div>
+                  <div class="flex justify-between text-xs text-gray-500 mb-1"><span>Kotlin</span><span>85%</span></div>
+                  <progress class="progress progress-error w-full" value="85" max="100"></progress>
+                </div>
+                <div>
+                  <div class="flex justify-between text-xs text-gray-500 mb-1"><span>Firebase</span><span>76%</span></div>
+                  <progress class="progress progress-error w-full" value="76" max="100"></progress>
+                </div>
+              </div>
             </div>
+
           </div>
         </div>
       </section>
@@ -304,31 +369,29 @@
     .fade-in.show { opacity: 1; transform: translateY(0) scale(1); }
     @keyframes pulse-slow { 0%,100% {opacity: 0.03;} 50% {opacity: 0.08;} }
     .animate-pulse-slow { animation: pulse-slow 8s infinite; }
-
-    /* Toast entrada/salida */
     @keyframes toastIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
     @keyframes toastOut { from { opacity: 1; transform: translateY(0); } to { opacity: 0; transform: translateY(20px); } }
     .toast-show { animation: toastIn 0.4s ease-out forwards; }
     .toast-hide { animation: toastOut 0.4s ease-in forwards; }
+
+    /* ✅ Progress bars: arrancan en 0 y se animan al valor real cuando son visibles */
+    .progress-animate {
+      transition: value 1.2s ease-out;
+    }
   </style>
 
   <script>
-    // ✅ TOAST al enviar formulario
+    // Toast
     document.getElementById("formulario").addEventListener("submit", function(e) {
       e.preventDefault();
       const toast = document.getElementById("toast-container");
-
-      // Mostrar
       toast.classList.remove("hidden", "toast-hide");
       toast.classList.add("toast-show");
-
-      // Ocultar tras 3.5 segundos
       setTimeout(() => {
         toast.classList.remove("toast-show");
         toast.classList.add("toast-hide");
         setTimeout(() => toast.classList.add("hidden"), 400);
       }, 3500);
-
       this.reset();
     });
 
@@ -342,6 +405,30 @@
     }
     document.getElementById("prev-btn").addEventListener("click", () => goTo(current - 1));
     document.getElementById("next-btn").addEventListener("click", () => goTo(current + 1));
+
+    // ✅ Progress bars: se animan cuando entran en pantalla
+    const progressBars = document.querySelectorAll('progress');
+    progressBars.forEach(bar => {
+      const realValue = bar.value;
+      bar.value = 0;
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            let start = 0;
+            const duration = 1200;
+            const step = (timestamp) => {
+              if (!start) start = timestamp;
+              const progress = Math.min((timestamp - start) / duration, 1);
+              bar.value = Math.floor(progress * realValue);
+              if (progress < 1) requestAnimationFrame(step);
+            };
+            requestAnimationFrame(step);
+            observer.unobserve(bar);
+          }
+        });
+      }, { threshold: 0.3 });
+      observer.observe(bar);
+    });
 
     // Scroll fade-in
     const faders = document.querySelectorAll('.fade-in');
