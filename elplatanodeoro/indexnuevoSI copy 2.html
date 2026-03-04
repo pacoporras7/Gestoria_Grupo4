@@ -13,27 +13,33 @@
 
 <body class="bg-white text-gray-900 font-sans scroll-smooth relative" style="font-family: 'Inter', sans-serif;">
 
-  <!-- ✅ NUEVO: DRAWER MÓVIL (DaisyUI) — envuelve todo el body -->
+  <!-- ✅ NUEVO: TOAST — aparece al enviar el formulario -->
+  <div id="toast-container" class="toast toast-end toast-bottom z-[9999] hidden">
+    <div class="alert bg-green-600 text-white shadow-xl rounded-2xl flex items-center gap-3 px-6 py-4">
+      <i class="fas fa-check-circle text-2xl"></i>
+      <div>
+        <p class="font-bold text-base">¡Mensaje enviado!</p>
+        <p class="text-sm text-green-100">Nos pondremos en contacto contigo pronto.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- DRAWER -->
   <div class="drawer">
     <input id="mobile-drawer" type="checkbox" class="drawer-toggle" />
 
-    <!-- Contenido principal -->
     <div class="drawer-content flex flex-col">
 
       <!-- HEADER -->
       <header class="border-b bg-white/80 backdrop-blur-md sticky top-0 z-50 shadow-sm">
         <nav class="max-w-7xl mx-auto flex justify-between items-center px-8 py-5">
           <h1 class="text-2xl font-extrabold tracking-wide text-blue-900" style="font-family: 'Syne', sans-serif;">Free Anuel</h1>
-
-          <!-- Menú desktop -->
           <ul class="hidden md:flex space-x-10 text-sm font-semibold uppercase tracking-wider">
             <li><a href="#inicio" class="hover:text-blue-700 transition">Inicio</a></li>
             <li><a href="#servicios" class="hover:text-blue-700 transition">Servicios</a></li>
             <li><a href="#equipo" class="hover:text-blue-700 transition">Equipo</a></li>
             <li><a href="#contacto" class="hover:text-blue-700 transition">Contacto</a></li>
           </ul>
-
-          <!-- Botón hamburguesa solo en móvil -->
           <label for="mobile-drawer" class="btn btn-ghost md:hidden">
             <i class="fas fa-bars text-xl text-blue-900"></i>
           </label>
@@ -141,7 +147,6 @@
             <button id="prev-btn" class="btn btn-circle bg-blue-900 text-white border-none hover:bg-blue-700 shadow-md flex-shrink-0">❮</button>
             <div class="overflow-hidden w-full rounded-2xl">
               <div id="carousel-track" class="flex transition-transform duration-500 ease-in-out">
-
                 <div class="carousel-slide min-w-full">
                   <div class="bg-blue-50 border border-blue-100 rounded-2xl shadow-lg p-10 flex flex-col items-center text-center gap-4">
                     <div class="text-blue-400 text-4xl"><i class="fas fa-quote-left"></i></div>
@@ -153,7 +158,6 @@
                     <div class="flex gap-1 text-yellow-400 text-sm"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                   </div>
                 </div>
-
                 <div class="carousel-slide min-w-full">
                   <div class="bg-blue-50 border border-blue-100 rounded-2xl shadow-lg p-10 flex flex-col items-center text-center gap-4">
                     <div class="text-blue-400 text-4xl"><i class="fas fa-quote-left"></i></div>
@@ -165,7 +169,6 @@
                     <div class="flex gap-1 text-yellow-400 text-sm"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                   </div>
                 </div>
-
                 <div class="carousel-slide min-w-full">
                   <div class="bg-blue-50 border border-blue-100 rounded-2xl shadow-lg p-10 flex flex-col items-center text-center gap-4">
                     <div class="text-blue-400 text-4xl"><i class="fas fa-quote-left"></i></div>
@@ -177,7 +180,6 @@
                     <div class="flex gap-1 text-yellow-400 text-sm"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
                   </div>
                 </div>
-
               </div>
             </div>
             <button id="next-btn" class="btn btn-circle bg-blue-900 text-white border-none hover:bg-blue-700 shadow-md flex-shrink-0">❯</button>
@@ -185,46 +187,32 @@
         </div>
       </section>
 
-      <!-- ✅ FAQ CORREGIDO: checkbox en vez de radio → se puede abrir Y cerrar -->
+      <!-- FAQ ACCORDION -->
       <section class="py-24 bg-gray-50">
         <div class="max-w-3xl mx-auto px-8">
           <h2 class="text-4xl font-extrabold mb-4 text-center text-blue-900">Preguntas Frecuentes</h2>
           <p class="text-center text-gray-500 mb-12">Todo lo que necesitas saber antes de empezar</p>
-
           <div class="flex flex-col gap-3">
-
             <div class="collapse collapse-arrow bg-white border border-blue-100 rounded-2xl shadow-sm">
               <input type="checkbox" />
               <div class="collapse-title text-lg font-semibold text-blue-900">¿Cuánto tiempo tarda un proyecto típico?</div>
-              <div class="collapse-content text-gray-600">
-                <p>Depende del alcance, pero la mayoría de nuestros proyectos se entregan en un plazo de 4 a 12 semanas. Realizamos una estimación detallada en la fase inicial sin coste.</p>
-              </div>
+              <div class="collapse-content text-gray-600"><p>Depende del alcance, pero la mayoría de nuestros proyectos se entregan en un plazo de 4 a 12 semanas. Realizamos una estimación detallada en la fase inicial sin coste.</p></div>
             </div>
-
             <div class="collapse collapse-arrow bg-white border border-blue-100 rounded-2xl shadow-sm">
               <input type="checkbox" />
               <div class="collapse-title text-lg font-semibold text-blue-900">¿Trabajáis con empresas pequeñas o solo grandes corporaciones?</div>
-              <div class="collapse-content text-gray-600">
-                <p>Trabajamos con todo tipo de organizaciones, desde startups en fase inicial hasta grandes empresas. Adaptamos nuestros servicios y precios a cada caso.</p>
-              </div>
+              <div class="collapse-content text-gray-600"><p>Trabajamos con todo tipo de organizaciones, desde startups en fase inicial hasta grandes empresas. Adaptamos nuestros servicios y precios a cada caso.</p></div>
             </div>
-
             <div class="collapse collapse-arrow bg-white border border-blue-100 rounded-2xl shadow-sm">
               <input type="checkbox" />
               <div class="collapse-title text-lg font-semibold text-blue-900">¿Ofrecéis soporte tras la entrega del proyecto?</div>
-              <div class="collapse-content text-gray-600">
-                <p>Sí, ofrecemos planes de mantenimiento y soporte continuo. Nuestro equipo está disponible para resolver incidencias y evolucionar la solución con el tiempo.</p>
-              </div>
+              <div class="collapse-content text-gray-600"><p>Sí, ofrecemos planes de mantenimiento y soporte continuo. Nuestro equipo está disponible para resolver incidencias y evolucionar la solución con el tiempo.</p></div>
             </div>
-
             <div class="collapse collapse-arrow bg-white border border-blue-100 rounded-2xl shadow-sm">
               <input type="checkbox" />
               <div class="collapse-title text-lg font-semibold text-blue-900">¿Cómo es el proceso para empezar a trabajar juntos?</div>
-              <div class="collapse-content text-gray-600">
-                <p>Muy sencillo: rellena el formulario de contacto, agendamos una reunión inicial gratuita, analizamos tu caso y te enviamos una propuesta en menos de 48 horas.</p>
-              </div>
+              <div class="collapse-content text-gray-600"><p>Muy sencillo: rellena el formulario de contacto, agendamos una reunión inicial gratuita, analizamos tu caso y te enviamos una propuesta en menos de 48 horas.</p></div>
             </div>
-
           </div>
         </div>
       </section>
@@ -275,9 +263,6 @@
             <button type="submit" class="btn bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-700 hover:to-blue-900 text-white transition duration-300 rounded-lg shadow-lg hover:shadow-2xl w-full py-4 font-semibold uppercase">
               Enviar
             </button>
-            <p id="mensaje-ok" class="hidden text-green-300 font-semibold text-center mt-4">
-              Mensaje enviado correctamente.
-            </p>
           </form>
         </div>
       </section>
@@ -289,14 +274,14 @@
 
       <!-- FOOTER -->
       <footer class="bg-gradient-to-t from-black to-gray-900 text-gray-300 py-6">
-        <div class="max-w-7xl mx-auto px-8 flex justify-between">
+        <div class="max-w-7xl mx-auto px-8">
           <p>&copy; 2026 NOMBRE. Todos los derechos reservados.</p>
         </div>
       </footer>
 
-    </div><!-- fin drawer-content -->
+    </div>
 
-    <!-- ✅ NUEVO: Panel lateral del drawer (menú móvil) -->
+    <!-- Panel lateral móvil -->
     <div class="drawer-side z-50">
       <label for="mobile-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
       <ul class="menu bg-blue-900 text-white min-h-full w-64 p-6 gap-2">
@@ -310,7 +295,7 @@
       </ul>
     </div>
 
-  </div><!-- fin drawer -->
+  </div>
 
   <style>
     @keyframes fadeIn { from { opacity: 0; transform: translateY(20px) scale(0.95); } to { opacity: 1; transform: translateY(0) scale(1); } }
@@ -319,17 +304,35 @@
     .fade-in.show { opacity: 1; transform: translateY(0) scale(1); }
     @keyframes pulse-slow { 0%,100% {opacity: 0.03;} 50% {opacity: 0.08;} }
     .animate-pulse-slow { animation: pulse-slow 8s infinite; }
+
+    /* Toast entrada/salida */
+    @keyframes toastIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes toastOut { from { opacity: 1; transform: translateY(0); } to { opacity: 0; transform: translateY(20px); } }
+    .toast-show { animation: toastIn 0.4s ease-out forwards; }
+    .toast-hide { animation: toastOut 0.4s ease-in forwards; }
   </style>
 
   <script>
-    // Formulario
-    document.getElementById("formulario").addEventListener("submit", function(e){
+    // ✅ TOAST al enviar formulario
+    document.getElementById("formulario").addEventListener("submit", function(e) {
       e.preventDefault();
-      document.getElementById("mensaje-ok").classList.remove("hidden");
+      const toast = document.getElementById("toast-container");
+
+      // Mostrar
+      toast.classList.remove("hidden", "toast-hide");
+      toast.classList.add("toast-show");
+
+      // Ocultar tras 3.5 segundos
+      setTimeout(() => {
+        toast.classList.remove("toast-show");
+        toast.classList.add("toast-hide");
+        setTimeout(() => toast.classList.add("hidden"), 400);
+      }, 3500);
+
       this.reset();
     });
 
-    // Carrusel — solo flechas
+    // Carrusel
     const track = document.getElementById("carousel-track");
     const slides = document.querySelectorAll(".carousel-slide");
     let current = 0;
@@ -342,9 +345,9 @@
 
     // Scroll fade-in
     const faders = document.querySelectorAll('.fade-in');
-    const appearOnScroll = new IntersectionObserver(function(entries, observer){
+    const appearOnScroll = new IntersectionObserver(function(entries, observer) {
       entries.forEach(entry => {
-        if(entry.isIntersecting){ entry.target.classList.add('show'); observer.unobserve(entry.target); }
+        if (entry.isIntersecting) { entry.target.classList.add('show'); observer.unobserve(entry.target); }
       });
     }, { threshold: 0.1 });
     faders.forEach(fader => appearOnScroll.observe(fader));
